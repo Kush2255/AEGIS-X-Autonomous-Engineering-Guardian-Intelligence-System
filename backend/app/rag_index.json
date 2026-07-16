@@ -1,0 +1,57 @@
+[
+  {
+    "source": "irc_bridge_codes.md",
+    "title": "IRC BRIDGE CODES - Overview",
+    "content": "# IRC:SP-18 - Manual for Structural Evaluation of Concrete Bridges"
+  },
+  {
+    "source": "irc_bridge_codes.md",
+    "title": "IRC BRIDGE CODES - Section 1: Shear Cracking on Piers and Girders",
+    "content": "Section 1: Shear Cracking on Piers and Girders\n\n- **Critical Diagnostics**: Diagonal cracks inclined at 45 degrees near the support (pier junctions) are shear cracks.\n- Unlike flexural cracks, shear cracks are brittle and dangerous.\n- **Urgency Thresholds**:\n  - Crack width < 1.0 mm: Monitor closely at 3-month intervals.\n  - Crack width 1.0 - 3.0 mm: Schedule pressure grouting with low-viscosity epoxy resin.\n  - Crack width > 3.0 mm: Critical structural danger. Impose speed and axle-load restrictions immediately. Restructure bridge girder loads.\n  - Crack width > 5.0 mm: Imminent local shear failure. Close the bridge span to heavy freight immediately."
+  },
+  {
+    "source": "irc_bridge_codes.md",
+    "title": "IRC BRIDGE CODES - Section 2: Concrete Spalling on Deck Girders",
+    "content": "Section 2: Concrete Spalling on Deck Girders\n\n- Spalling on the underside of deck slabs or girders weakens the tensile flange.\n- If section loss of tensile reinforcement exceeds 10%, structural integrity is compromised.\n- **Section Loss and Rehabilitation (Section 6)**:\n  - Section Loss < 10%: Clean rebar, apply rust inhibitors, restore profile using polymer-modified cementitious mortar.\n  - Section Loss 10% - 25%: Install carbon fiber-reinforced polymer (CFRP) wraps or laminates to restore tensile capacity.\n  - Section Loss > 25%: Requires welding additional steel rebars or installing external post-tensioning tendons to restore structural load rating."
+  },
+  {
+    "source": "irc_bridge_codes.md",
+    "title": "IRC BRIDGE CODES - Section 3: Bridge Foundation Settlement",
+    "content": "Section 3: Bridge Foundation Settlement\n\n- Tilting, differential settlement, or cracking at the base of piers indicates foundation wash-out, soil scour, or bearing failure.\n- Scour inspection must be performed post-monsoon.\n- Remediation: Concrete underpinning or micro-piling around the pier cap foundation."
+  },
+  {
+    "source": "is456_concrete.md",
+    "title": "IS456 CONCRETE - Overview",
+    "content": "# IS 456:2000 - Plain and Reinforced Concrete Code of Practice"
+  },
+  {
+    "source": "is456_concrete.md",
+    "title": "IS456 CONCRETE - Section 1: Permissible Crack Widths",
+    "content": "Section 1: Permissible Crack Widths\n\nAccording to Clause 35.3.2, structural cracks in concrete structures affect durability and appearance. The limits for surface crack widths under serviceability limit state are:\n- **Mild Exposure**: Surface crack width should not exceed **0.3 mm** in reinforced concrete members.\n- **Moderate Exposure**: Surface crack width should not exceed **0.2 mm** (e.g., structures exposed to rain or damp basements).\n- **Severe Exposure**: Surface crack width should not exceed **0.1 mm** (e.g., structures exposed to marine environments or aggressive chemicals).\n- **Critical Structural Danger**: Any crack exceeding **1.5 mm** indicates shear distress or structural overloading. Immediate pressure epoxy injection is required."
+  },
+  {
+    "source": "is456_concrete.md",
+    "title": "IS456 CONCRETE - Section 2: Concrete Spalling and Reinforcement Exposure",
+    "content": "Section 2: Concrete Spalling and Reinforcement Exposure\n\nClause 26.4 states that concrete cover protects reinforcement from corrosion and fire.\n- **Nominal Cover Requirements**:\n  - Slab: 20 mm\n  - Beam: 25 mm\n  - Column: 40 mm\n  - Foundation: 50 mm\n- **Spalling Action Limits**:\n  - When concrete spalls and reinforcement is exposed, the carbonation front has reached the steel.\n  - Exposure of reinforcement bars leads to steel section loss. Active scaling rust reduces the tensile capacity.\n  - **Clause 11.3 Repair Standard**: Expose the corroded steel completely, clean using wire brushes or sandblasting, apply a zinc-rich anti-corrosion primer, and patch with polymer-modified mortar or micro-concrete."
+  },
+  {
+    "source": "is456_concrete.md",
+    "title": "IS456 CONCRETE - Section 3: Concrete Leaching and Carbonation",
+    "content": "Section 3: Concrete Leaching and Carbonation\n\n- **Calcium Leaching**: White efflorescence or carbonate deposits on concrete surfaces (especially in tunnels or dams) indicate that water is leaching calcium hydroxide.\n- Leaching increases concrete porosity, dropping compressive strength and paving the way for carbonation.\n- Remediation: Drill injection ports and pump polyurethane chemical grout to stop water ingress."
+  },
+  {
+    "source": "ndma_landslide_retaining.md",
+    "title": "NDMA LANDSLIDE RETAINING - Overview",
+    "content": "# NDMA Guidelines: Landslide Risk Mitigation & Retaining Structures"
+  },
+  {
+    "source": "ndma_landslide_retaining.md",
+    "title": "NDMA LANDSLIDE RETAINING - Section 1: Retaining Wall Structural Inspections",
+    "content": "Section 1: Retaining Wall Structural Inspections\n\nRetaining walls (masonry, reinforced concrete, or gabion) are critical for protecting highway roads, bridges, and mountain structures.\n- **Defect Indicators**:\n  - **Tilted Wall**: Indicates earth pressure exceeding design capacity or soil liquefaction behind the wall.\n  - **Weep Hole Blockage**: Blocked weep holes trap water behind the wall, creating hydrostatic pressure. This is the #1 cause of retaining wall collapse.\n  - **Horizontal Cracking**: Indicates bending stress. Cracks > 2.0 mm on concrete retaining walls require immediate pressure relief.\n- **Remediation**:\n  - Clear clogged weep holes. Drill new weep holes at 1.5m grid intervals.\n  - Install ground anchors (soil nailing) to anchor the retaining wall back into stable rock."
+  },
+  {
+    "source": "ndma_landslide_retaining.md",
+    "title": "NDMA LANDSLIDE RETAINING - Section 2: Slope Stability and Soil Erosion",
+    "content": "Section 2: Slope Stability and Soil Erosion\n\n- Drainage structures, catch drains, and concrete-lined chutes must be free of debris.\n- Soil slopes near highway bridge abutments require geotextile membrane covers or shotcrete application to prevent erosion under heavy monsoons.\n- If cracks form in the soil slope crest, it indicates tension cracking and imminent landslide failure. Fill cracks with compacted clay immediately to prevent water ingress."
+  }
+]

@@ -1,0 +1,19 @@
+# Python virtual environments and caches
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+aegis_x.db
+
+# Node.js dependencies and builds
+node_modules/
+dist/
+.eslintcache
+.vite/
+
+# Editor and system settings
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
