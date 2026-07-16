@@ -5,6 +5,16 @@ import math
 import google.generativeai as genai
 from typing import List, Dict, Any
 
+# Load env variables from local .env file
+env_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".env")
+if os.path.exists(env_file):
+    with open(env_file, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, value = line.split("=", 1)
+                os.environ[key] = value
+
 GUIDELINES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "guidelines")
 INDEX_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "rag_index.json")
 
@@ -77,7 +87,7 @@ class RAGSystem:
                 for idx, chunk in enumerate(all_chunks):
                     print(f"Embedding chunk {idx+1}/{len(all_chunks)}: {chunk['title']}")
                     result = genai.embed_content(
-                        model="models/text-embedding-004",
+                        model="models/embedding-001",
                         content=chunk["content"],
                         task_type="retrieval_document"
                     )
@@ -176,7 +186,7 @@ class RAGSystem:
         if self.api_key and self.chunks and "embedding" in self.chunks[0]:
             try:
                 query_embed_res = genai.embed_content(
-                    model="models/text-embedding-004",
+                    model="models/embedding-001",
                     content=query,
                     task_type="retrieval_query"
                 )
