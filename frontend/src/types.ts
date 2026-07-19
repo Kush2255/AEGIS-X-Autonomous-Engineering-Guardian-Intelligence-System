@@ -10,6 +10,13 @@ export interface Asset {
   image_url?: string;
   created_at: string;
   updated_at: string;
+
+  district?: string;
+  last_inspection_date?: string;
+  inspection_frequency?: string;
+  responsible_department?: string;
+  asset_age?: number;
+  current_status?: string;
 }
 
 export interface Inspection {

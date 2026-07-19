@@ -26,7 +26,7 @@ export const Copilot: React.FC<CopilotProps> = ({ assetId, assetName, isOpen, on
     setMessages([
       {
         sender: 'ai',
-        text: `Hello, Engineer. I am your AEGIS X Copilot, grounded in the Digital Twin of **${assetName}**. I can parse inspection histories, retrieve design guides (IS-456, IRC codes, NDMA), and explain risk assessments. What would you like to examine?`,
+        text: `Hello, Engineer. I am your PRAHARI AI Copilot, grounded in the Digital Twin of **${assetName}**. I can parse inspection histories, retrieve design guides (IS-456, IRC codes, NDMA), and explain risk assessments. What would you like to examine?`,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       }
     ]);
@@ -80,7 +80,7 @@ export const Copilot: React.FC<CopilotProps> = ({ assetId, assetName, isOpen, on
       console.error('Error fetching copilot response:', error);
       const errorMsg: Message = {
         sender: 'ai',
-        text: 'System link failure. I was unable to connect to the AEGIS Agent pipeline. Running offline diagnostics. Please ensure the backend server is running.',
+        text: 'System link failure. I was unable to connect to the PRAHARI Agent pipeline. Running offline diagnostics. Please ensure the backend server is running.',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
       setMessages(prev => [...prev, errorMsg]);
@@ -103,7 +103,7 @@ export const Copilot: React.FC<CopilotProps> = ({ assetId, assetName, isOpen, on
       <div className="p-4 border-b border-dark-border flex items-center justify-between bg-dark-bg/40">
         <div className="flex items-center space-x-2 text-brand-primary">
           <Sparkles className="w-5 h-5 text-brand-primary animate-pulse" />
-          <span className="font-display font-bold tracking-wide text-gray-200">AEGIS X COPILOT</span>
+          <span className="font-display font-bold tracking-wide text-gray-200">PRAHARI AI COPILOT</span>
         </div>
         <button onClick={onClose} className="p-1 hover:bg-dark-hover rounded transition-colors text-gray-400 hover:text-white">
           <X className="w-5 h-5" />

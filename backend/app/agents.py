@@ -453,7 +453,7 @@ class ReportAgent:
         for s in simulations:
             sims_md += f"- **{s['scenario_name']}**: Projected Health: {s['projected_health']} | Risk: {s['projected_risk']} | Cost: ${s['estimated_repair_cost']:,} | Code Ref: {s['code_reference']}\n  _Analysis_: {s['logic_explanation']}\n"
 
-        markdown_report = f"""# AEGIS X - STRUCTURAL AUDIT REPORT
+        markdown_report = f"""# PRAHARI AI - STRUCTURAL AUDIT REPORT
 **Asset Name**: {asset_name}
 **Asset Class**: {asset_type}
 **Report Generation Date**: {datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")}

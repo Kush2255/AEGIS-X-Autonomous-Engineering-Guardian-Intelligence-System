@@ -30,6 +30,10 @@ class RAGSystem:
         filename = os.path.basename(filepath)
         title = filename.replace(".md", "").replace("_", " ").upper()
         
+        # Extract collection ID, e.g. "Collection 01" from filename "collection_01_..."
+        match = re.search(r'collection_(\d+)', filename)
+        collection_id = f"Collection {match.group(1)}" if match else "General"
+        
         with open(filepath, "r", encoding="utf-8") as f:
             content = f.read()
 
@@ -42,6 +46,7 @@ class RAGSystem:
         if intro:
             chunks.append({
                 "source": filename,
+                "collection_id": collection_id,
                 "title": title + " - Overview",
                 "content": intro
             })
@@ -60,6 +65,7 @@ class RAGSystem:
             if body:
                 chunks.append({
                     "source": filename,
+                    "collection_id": collection_id,
                     "title": f"{title} - {section_title}",
                     "content": f"{section_title}\n\n{body}"
                 })
@@ -172,6 +178,7 @@ class RAGSystem:
                     "score": float(score),
                     "title": chunk["title"],
                     "source": chunk["source"],
+                    "collection_id": chunk.get("collection_id", "General"),
                     "content": chunk["content"]
                 })
         return results
@@ -210,6 +217,7 @@ class RAGSystem:
                         "score": float(sim),
                         "title": chunk["title"],
                         "source": chunk["source"],
+                        "collection_id": chunk.get("collection_id", "General"),
                         "content": chunk["content"]
                     }
                     for sim, chunk in results[:limit]

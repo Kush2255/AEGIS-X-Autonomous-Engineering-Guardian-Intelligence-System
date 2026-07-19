@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from 'recharts';
 import { ArrowLeft, DollarSign, BookOpen, Clock, Activity } from 'lucide-react';
 import type { Asset, Simulation } from '../types';
+import { ThreeDConstellation } from '../components/ThreeDConstellation';
+import { ThreeDTilt } from '../components/ThreeDTilt';
 
 interface SimulatorProps {
   onBack: () => void;
@@ -96,7 +98,8 @@ export const Simulator: React.FC<SimulatorProps> = ({ onBack, selectedAssetId })
 
   return (
     <div className="min-h-screen p-6 relative">
-      <div className="max-w-7xl mx-auto space-y-6">
+      <ThreeDConstellation />
+      <div className="max-w-7xl mx-auto space-y-6 relative z-10">
         
         {/* Navigation header */}
         <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -159,7 +162,8 @@ export const Simulator: React.FC<SimulatorProps> = ({ onBack, selectedAssetId })
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             
             {/* Chart (Left Panel) */}
-            <div className="lg:col-span-7 glass-panel rounded-2xl p-6 shadow-glass flex flex-col justify-between">
+            <ThreeDTilt className="lg:col-span-7">
+              <div className="glass-panel rounded-2xl p-6 shadow-glass flex flex-col justify-between h-full">
               <div>
                 <h3 className="font-display font-bold text-gray-200">Deterioration Curve & Repair Budget</h3>
                 <p className="text-xs text-dark-muted mb-4 font-sans">Simulating impact on structural health score (%) and repair cost ($ in thousands).</p>
@@ -180,9 +184,11 @@ export const Simulator: React.FC<SimulatorProps> = ({ onBack, selectedAssetId })
                 </ResponsiveContainer>
               </div>
             </div>
+          </ThreeDTilt>
 
             {/* Analysis card (Right Panel) */}
-            <div className="lg:col-span-5 glass-panel rounded-2xl p-6 shadow-glass flex flex-col justify-between">
+            <ThreeDTilt className="lg:col-span-5">
+              <div className="glass-panel rounded-2xl p-6 shadow-glass flex flex-col justify-between h-full">
               <div>
                 <span className="text-[10px] text-brand-primary uppercase font-bold tracking-wider">Explainable AI Core</span>
                 <h3 className="font-display font-bold text-gray-200 mt-0.5">Simulation Assumptions</h3>
@@ -208,7 +214,8 @@ export const Simulator: React.FC<SimulatorProps> = ({ onBack, selectedAssetId })
                   </div>
                 </div>
               </div>
-            </div>
+              </div>
+            </ThreeDTilt>
           </div>
         ) : (
           <div className="glass-panel rounded-2xl p-10 text-center text-dark-muted text-sm shadow-glass">
@@ -220,10 +227,14 @@ export const Simulator: React.FC<SimulatorProps> = ({ onBack, selectedAssetId })
         {simulations.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             {simulations.map((sim, idx) => (
-              <div 
-                key={idx} 
-                className="glass-panel p-5 rounded-2xl flex flex-col justify-between space-y-4 hover:border-brand-primary/30 transition-all duration-300"
-              >
+              <ThreeDTilt key={idx}>
+                <div 
+                  className={`glass-panel p-5 rounded-2xl flex flex-col justify-between space-y-4 h-full ${
+                    sim.projected_risk === 'Critical' ? 'glow-critical' :
+                    sim.projected_risk === 'Warning' ? 'glow-warning' :
+                    sim.projected_risk === 'Monitor' ? 'glow-monitor' : 'glow-success'
+                  }`}
+                >
                 <div className="space-y-2">
                   <div className="text-xs font-black uppercase text-gray-200 tracking-wider flex items-center justify-between">
                     <span>{sim.scenario_name}</span>
@@ -254,7 +265,8 @@ export const Simulator: React.FC<SimulatorProps> = ({ onBack, selectedAssetId })
 
                   <p className="text-[10px] text-dark-muted leading-relaxed line-clamp-4">{sim.logic_explanation}</p>
                 </div>
-              </div>
+                </div>
+              </ThreeDTilt>
             ))}
           </div>
         )}

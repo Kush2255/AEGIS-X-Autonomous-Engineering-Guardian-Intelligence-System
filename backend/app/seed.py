@@ -11,77 +11,242 @@ def seed_database():
 
     try:
         print("Creating mock assets...")
-        # 1. Ganga Bridge
+        # 1. Telugu Thalli Flyover (Hyderabad)
         ganga_bridge = Asset(
             id="ganga-bridge-sec12",
-            name="Ganga Bridge (Sector 12)",
+            name="Telugu Thalli Flyover (Hyderabad)",
             type="Bridge",
-            location_gps="25.3176,83.0062",
-            address="National Highway 2, Sector 12 Bypass, Varanasi, UP",
-            description="Four-lane prestressed concrete box girder bridge spanning the Ganga River. Built in 2011. Experiences high volume of multi-axle freight vehicles.",
+            location_gps="17.4095,78.4735",
+            address="Near Secretariat, Lower Tank Bund, Hyderabad, Telangana",
+            description="Multi-span concrete girder flyover linking Secretariat to Lower Tank Bund. Completed in 2005. Experiences heavy urban passenger traffic.",
             current_health_score=62.5,
             risk_level="Critical",
-            image_url="https://images.unsplash.com/photo-1545624902-863df70e6378?auto=format&fit=crop&w=600&q=80"
+            image_url="http://localhost:8000/static/ganga_bridge.png",
+            district="Hyderabad",
+            last_inspection_date="2026-07-14",
+            inspection_frequency="Annually",
+            responsible_department="Telangana Roads & Buildings Department",
+            asset_age=21,
+            current_status="Structural shear cracks monitored at Pier 2"
         )
 
-        # 2. Metro Tunnel Line 3
+        # 2. Begumpet Stormwater Nala (Hyderabad)
         metro_tunnel = Asset(
             id="metro-tunnel-line3",
-            name="Metro Tunnel Line 3 (Span 45)",
-            type="Tunnel",
-            location_gps="18.9560,72.8238",
-            address="Colaba-Bandra-Seepz Corridor, Span 45 East, Mumbai, MH",
-            description="Underground bored concrete tunnel lined with precast segment blocks. Serves daily passenger transit trains.",
+            name="Begumpet Stormwater Nala (Hyderabad)",
+            type="Drainage",
+            location_gps="17.4374,78.4612",
+            address="Arterial Canal, Begumpet Central Basin, Secunderabad, Telangana",
+            description="Arterial reinforced concrete stormwater drainage channel serving the central catchment basin of Hyderabad.",
             current_health_score=78.0,
             risk_level="Monitor",
-            image_url="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=600&q=80"
+            image_url="http://localhost:8000/static/metro_tunnel.png",
+            district="Hyderabad",
+            last_inspection_date="2026-07-07",
+            inspection_frequency="Biannually",
+            responsible_department="Greater Hyderabad Municipal Corporation (GHMC)",
+            asset_age=12,
+            current_status="Joint gasket seepage under monitor"
         )
 
-        # 3. Yamuna Reservoir Dam
+        # 3. Mission Bhagiratha Water Treatment Plant
         yamuna_dam = Asset(
             id="yamuna-reservoir-dam",
-            name="Yamuna Reservoir Dam (Sluice Gate C)",
-            type="Dam",
-            location_gps="30.5844,77.7289",
-            address="Yamuna River Hydropower Station, Dakpathar, UK",
-            description="Gravity concrete dam constructed for irrigation and power generation. Sluice Gate C controls drainage bypass.",
+            name="Mission Bhagiratha Water Treatment Plant",
+            type="Water Utility",
+            location_gps="17.0500,79.2700",
+            address="Purification Plant, Nalgonda Division, Nalgonda, Telangana",
+            description="Gravity water purification and storage facility supplying clean drinking water. Safe, operating at peak hydraulic head.",
             current_health_score=94.5,
             risk_level="Safe",
-            image_url="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=600&q=80"
+            image_url="http://localhost:8000/static/yamuna_dam.png",
+            district="Nalgonda",
+            last_inspection_date="2026-06-29",
+            inspection_frequency="Quarterly",
+            responsible_department="Mission Bhagiratha Division",
+            asset_age=8,
+            current_status="Operational - Safe"
         )
 
-        # 4. Executive Plaza Complex
+        # 4. Osmania General Hospital (Heritage Block)
         executive_plaza = Asset(
             id="exec-plaza-complex",
-            name="Executive Plaza Complex (Main Block)",
+            name="Osmania General Hospital (Heritage Block)",
             type="Building",
-            location_gps="28.5355,77.2639",
-            address="Nehru Place Commercial Center, New Delhi, DL",
-            description="15-story commercial skyscraper featuring composite concrete and steel frame structures. Built in 1995.",
+            location_gps="17.3785,78.4760",
+            address="Afzal Gunj Medical Complex, Hyderabad Metropolitan Area, Telangana",
+            description="Three-story heritage masonry and concrete structure built in 1919. Houses critical medical wards.",
             current_health_score=68.2,
             risk_level="Warning",
-            image_url="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
+            image_url="http://localhost:8000/static/executive_plaza.png",
+            district="Hyderabad",
+            last_inspection_date="2026-07-11",
+            inspection_frequency="Biannually",
+            responsible_department="Telangana Health & Family Welfare Department",
+            asset_age=107,
+            current_status="Masonry degradation - Warning alert"
         )
 
-        # 5. National Highway 44
+        # 5. Telangana State Highway 1 (Siddipet Bypass)
         nh44_road = Asset(
             id="nh44-road-sec7",
-            name="National Highway 44 (Section 7)",
+            name="Telangana State Highway 1 (Siddipet Bypass)",
             type="Road",
-            location_gps="31.2580,75.7020",
-            address="NH-44 Expressway, Section 7 North, Jalandhar, PB",
-            description="Six-lane flexible bituminous asphalt roadway serving high-speed interstate logistics and passenger traffic.",
+            location_gps="18.1010,78.8520",
+            address="State Highway 1 Corridor, Siddipet Outer Ring, Siddipet, Telangana",
+            description="Four-lane flexible bituminous asphalt roadway serving high-density freight logistics and intercity passenger traffic.",
             current_health_score=81.0,
             risk_level="Monitor",
-            image_url="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80"
+            image_url="http://localhost:8000/static/nh44_highway.png",
+            district="Siddipet",
+            last_inspection_date="2026-07-04",
+            inspection_frequency="Quarterly",
+            responsible_department="Telangana State Road Development Corporation (TSRDC)",
+            asset_age=15,
+            current_status="Pavement alligator cracking reported"
         )
 
-        db.add_all([ganga_bridge, metro_tunnel, yamuna_dam, executive_plaza, nh44_road])
+        db.add(ganga_bridge)
+        db.add(metro_tunnel)
+        db.add(yamuna_dam)
+        db.add(executive_plaza)
+        db.add(nh44_road)
+        db.commit()
+
+        # Dynamic Generation of 245 Additional Telangana Pilot Assets
+        import random
+        random.seed(42)
+
+        districts = [
+            "Hyderabad", "Warangal", "Karimnagar", "Nizamabad", "Khammam", 
+            "Nalgonda", "Mahabubnagar", "Adilabad", "Rangareddy", "Siddipet", 
+            "Medak", "Jagitial", "Mancherial", "Peddapalli", "Suryapet", 
+            "Sangareddy", "Vikarabad", "Bhadradri Kothagudem"
+        ]
+
+        infra_types = [
+            ("Roads", "Road", "Telangana State Road Development Corporation (TSRDC)"),
+            ("State Highways", "Road", "Telangana Roads & Buildings Department"),
+            ("Bridges", "Bridge", "Telangana Roads & Buildings Department"),
+            ("Flyovers", "Bridge", "Greater Hyderabad Municipal Corporation (GHMC)"),
+            ("Government Buildings", "Building", "Telangana Roads & Buildings Department"),
+            ("Hospitals", "Building", "Telangana Health & Family Welfare Department"),
+            ("Schools", "Building", "Telangana School Education Department"),
+            ("Universities", "Building", "Telangana Higher Education Department"),
+            ("Railway Infrastructure", "Railway", "South Central Railway (SCR)"),
+            ("Water Utilities", "Water Utility", "Mission Bhagiratha Division"),
+            ("Drainage Systems", "Drainage", "GHMC Stormwater Department"),
+            ("Smart City Assets", "Building", "Telangana Smart Cities Mission"),
+            ("Public Utilities", "Utility", "Telangana State Southern Power Distribution (TSSPDCL)")
+        ]
+
+        for i in range(1, 246):
+            district = random.choice(districts)
+            infra_display_type, db_type, dept = random.choice(infra_types)
+            
+            # Programmatic coordinates bounded inside Telangana
+            # Latitude: 15.8 to 19.8, Longitude: 77.2 to 81.8
+            lat = round(random.uniform(16.2, 19.5), 5)
+            lng = round(random.uniform(77.5, 81.2), 5)
+            gps = f"{lat},{lng}"
+            
+            address = f"Sector {random.randint(1,12)} Bypass, {district}, Telangana"
+            
+            # Asset naming templates based on class
+            if infra_display_type == "Roads":
+                name = f"{district} Bypass Link Road {i}"
+            elif infra_display_type == "State Highways":
+                name = f"Telangana SH-{random.randint(2, 120)} ({district} Section)"
+            elif infra_display_type == "Bridges":
+                name = f"{district} Concrete River Bridge {i}"
+            elif infra_display_type == "Flyovers":
+                name = f"{district} Flyover Bypass {i}"
+            elif infra_display_type == "Government Buildings":
+                name = f"{district} District Collectorate Complex"
+            elif infra_display_type == "Hospitals":
+                name = f"{district} Area Civil Hospital"
+            elif infra_display_type == "Schools":
+                name = f"{district} Zilla Parishad High School {i}"
+            elif infra_display_type == "Universities":
+                name = f"{district} State College Campus"
+            elif infra_display_type == "Railway Infrastructure":
+                name = f"SCR Overhead Rail Bridge Block {i} ({district})"
+            elif infra_display_type == "Water Utilities":
+                name = f"Mission Bhagiratha Intake Well ({district})"
+            elif infra_display_type == "Drainage Systems":
+                name = f"{district} Stormwater Nala Link {i}"
+            elif infra_display_type == "Smart City Assets":
+                name = f"{district} Municipal Smart City Hub"
+            else:
+                name = f"{district} TSSPDCL Substation Block {i}"
+
+            health = round(random.uniform(40.0, 98.0), 1)
+            
+            if health < 65.0:
+                risk = "Critical"
+                status = random.choice([
+                    "Severe concrete cracking & shear deflection reported",
+                    "Reinforcement steel exposed with active rusting",
+                    "Foundation scouring detected post-monsoon"
+                ])
+            elif health < 75.0:
+                risk = "Warning"
+                status = random.choice([
+                    "Minor concrete peeling & plaster cracking observed",
+                    "Dampness and efflorescence leaching on joints",
+                    "Potholes and fatigue deformation on surface"
+                ])
+            elif health < 85.0:
+                risk = "Monitor"
+                status = random.choice([
+                    "Hairline cracking under normal surveillance",
+                    "Standard structural deflection observed",
+                    "Minor vegetation growth on concrete guides"
+                ])
+            else:
+                risk = "Safe"
+                status = "Operational - Optimal performance parameters"
+
+            # Image mapping based on type
+            if db_type == "Bridge":
+                image = "http://localhost:8000/static/ganga_bridge.png"
+            elif db_type == "Drainage":
+                image = "http://localhost:8000/static/metro_tunnel.png"
+            elif db_type == "Water Utility":
+                image = "http://localhost:8000/static/yamuna_dam.png"
+            elif db_type == "Road":
+                image = "http://localhost:8000/static/nh44_highway.png"
+            else:
+                image = "http://localhost:8000/static/executive_plaza.png"
+
+            last_ins_date = (datetime.utcnow() - timedelta(days=random.randint(2, 90))).strftime("%Y-%m-%d")
+            ins_freq = random.choice(["Quarterly", "Biannually", "Annually"])
+            age = random.randint(2, 60)
+
+            asset = Asset(
+                id=f"asset-gen-{i}",
+                name=name,
+                type=db_type,
+                location_gps=gps,
+                address=address,
+                description=f"Representative pilot asset monitoring structural safety under the PRAHARI AI telemetry network. Class: {infra_display_type}.",
+                current_health_score=health,
+                risk_level=risk,
+                image_url=image,
+                district=district,
+                last_inspection_date=last_ins_date,
+                inspection_frequency=ins_freq,
+                responsible_department=dept,
+                asset_age=age,
+                current_status=status
+            )
+            db.add(asset)
+
         db.commit()
 
         print("Creating mock inspections...")
         
-        # --- GANGA BRIDGE INSPECTIONS ---
+        # --- TELUGU THALLI FLYOVER INSPECTIONS ---
         # 2024 Inspection (2 years ago)
         date_2024 = datetime.utcnow() - timedelta(days=730)
         ins_gb_2024 = Inspection(
@@ -93,9 +258,9 @@ def seed_database():
             summary="Routine visual inspection completed. Found minor temperature-induced hairline cracking on Pier 2 surface. No structural danger observed.",
             status="Completed",
             weather="Dry / Clear, 32°C",
-            traffic_load="Standard Highway Load (25,000 PCU/day)",
+            traffic_load="Standard Urban Flyover Load (20,000 PCU/day)",
             details_json={
-                "inspector_notes": "Hairline cracks present on Pier 2. Cracks are localized, estimated depth is shallow. Recommended monitoring at next inspection cycles.",
+                "inspector_notes": "Hairline cracks present on Pier 2 column face. Cracks are localized, estimated depth is shallow. Recommended monitoring at next inspection cycles.",
                 "agents_involved": ["InspectorAgent", "RiskAnalystAgent"]
             }
         )
@@ -111,7 +276,7 @@ def seed_database():
             summary="Annual structural audit. Pier 2 hairline cracks have expanded. Discovered minor concrete spalling and aggregate exposure on the lower flange of Span 3.",
             status="Completed",
             weather="Humid / Light Rain, 28°C",
-            traffic_load="High Traffic Load (32,000 PCU/day)",
+            traffic_load="High Traffic Load (28,000 PCU/day)",
             details_json={
                 "inspector_notes": "Pier 2 cracks are widening, now measured around 1.8mm. Span 3 exhibits concrete cover peeling. Need to seal cracks.",
                 "agents_involved": ["InspectorAgent", "DocumentAgent", "RiskAnalystAgent"]
@@ -129,9 +294,9 @@ def seed_database():
             summary="Urgent structural inspection triggered. Significant structural cracks discovered on Pier 2 (5.2mm width). Extensive spalling and reinforcement bars are fully exposed on Span 3, showing advanced rust scaling and cross-sectional reduction.",
             status="Completed",
             weather="Heavy Monsoon Rain, 24°C",
-            traffic_load="Overloaded Traffic (38,000 PCU/day, heavy mining trucks)",
+            traffic_load="Overloaded Traffic (34,000 PCU/day, heavy double-decker buses and logs)",
             details_json={
-                "inspector_notes": "Active water leaching from cracks. Reinforcement shows active corrosion and scaling. Section loss is visible. Structural integrity is compromised. Heavy loaded multi-axle trucks are putting excessive stress.",
+                "inspector_notes": "Active water leaching from cracks. Reinforcement shows active corrosion and scaling. Section loss is visible. Structural integrity is compromised. Heavy loaded multi-axle buses are putting excessive stress.",
                 "agents_involved": ["InspectorAgent", "DocumentAgent", "KnowledgeAgent", "StructuralEngineerAgent", "RiskAnalystAgent", "SimulationAgent", "ReportAgent"]
             }
         )
@@ -139,68 +304,68 @@ def seed_database():
         db.add_all([ins_gb_2024, ins_gb_2025, ins_gb_2026])
         db.commit()
 
-        # --- METRO TUNNEL INSPECTIONS ---
+        # --- BEGUMPET STORMWATER NALA INSPECTIONS ---
         ins_mt_current = Inspection(
             id="mt-ins-2026",
             asset_id="metro-tunnel-line3",
             inspection_date=datetime.utcnow() - timedelta(days=12),
             inspector_name="Ir. Sarah Jenkins",
             overall_risk_score=42.0,
-            summary="Discovered localized moisture ingress and active water leakage at Segment Joint 45 East. Corrosion starting on steel rail fixtures nearby. Tunnel lining integrity is intact, but joint sealing requires maintenance.",
+            summary="Discovered localized moisture ingress and active water leakage at concrete lining Joint 45. Joint sealant has degraded, allowing water leakage behind nala walls.",
             status="Completed",
             weather="Dry (Sub-surface)",
-            traffic_load="220 trains/day (Standard Transit Load)",
+            traffic_load="Monsoonal drainage load (40% capacity)",
             details_json={
-                "inspector_notes": "Active dripping observed, approx 2 liters/hour. Carbonate deposits forming on tunnel floor. Need chemical grouting.",
+                "inspector_notes": "Active water seepage observed. Carbonate efflorescence deposits forming on nala walls. Joint sealing requires maintenance.",
                 "agents_involved": ["InspectorAgent", "KnowledgeAgent", "StructuralEngineerAgent", "RiskAnalystAgent"]
             }
         )
 
-        # --- YAMUNA DAM INSPECTIONS ---
+        # --- MISSION BHAGIRATHA WATER TREATMENT PLANT INSPECTIONS ---
         ins_yd_current = Inspection(
             id="yd-ins-2026",
             asset_id="yamuna-reservoir-dam",
             inspection_date=datetime.utcnow() - timedelta(days=20),
             inspector_name="R. S. Negi (Executive Engineer)",
             overall_risk_score=10.0,
-            summary="Bi-annual dam safety inspection. Sluice Gate C structures, hydraulic cylinders, and concrete guides are operating optimally. Minor cosmetic algae growth on spillway walls. No structural defects.",
+            summary="Bi-annual water plant safety inspection. Spillway gates, control valves, and concrete guides are operating optimally. Minor cosmetic algae growth on spillway walls. No structural defects.",
             status="Completed",
             weather="Dry, 18°C",
             traffic_load="Hydrostatic Head Level: 122.5m (Within limits)",
             details_json={
-                "inspector_notes": "Gate operation test successful. Seal friction is within normal parameters. Algae growth does not threaten concrete integrity.",
+                "inspector_notes": "Valves operation test successful. Seal friction is within normal parameters. Algae growth does not threaten concrete integrity.",
                 "agents_involved": ["InspectorAgent", "RiskAnalystAgent"]
             }
         )
 
-        # --- EXECUTIVE PLAZA INSPECTIONS ---
+        # --- OSMANIA GENERAL HOSPITAL INSPECTIONS ---
         ins_ep_current = Inspection(
             id="ep-ins-2026",
             asset_id="exec-plaza-complex",
             inspection_date=datetime.utcnow() - timedelta(days=8),
             inspector_name="Vijay Kapoor (Consulting Structural Engineer)",
             overall_risk_score=68.0,
-            summary="Structural assessment of columns on basement parking Level 2. Shear cracks (3.1mm width) found at the junction of main column B4 and concrete girder. Rust staining indicates internal reinforcement oxidation. Fireproofing coating has degraded.",
+            summary="Structural assessment of columns on basement Level 2. Shear cracks (3.1mm width) found at the junction of main column B4 and concrete girder. Rust staining indicates internal reinforcement oxidation. Fireproofing coating has degraded.",
             status="Completed",
             weather="Dry, 38°C",
-            traffic_load="100% building occupancy, heavy basement parking usage",
+            traffic_load="100% building occupancy, heavy basement usage",
             details_json={
                 "inspector_notes": "Basement dampness is contributing to structural degradation. The shear cracks require immediate polymer-modified mortar repair and steel collar jacket wrapping.",
                 "agents_involved": ["InspectorAgent", "KnowledgeAgent", "StructuralEngineerAgent", "RiskAnalystAgent", "SimulationAgent"]
             }
         )
 
-        # --- NH44 ROAD INSPECTIONS ---
+        # --- SH-1 ROAD INSPECTIONS ---
         ins_nh_current = Inspection(
             id="nh-ins-2026",
             asset_id="nh44-road-sec7",
             inspection_date=datetime.utcnow() - timedelta(days=15),
-            inspector_name="Harpreet Singh (NHAI Inspector)",
+            inspector_name="Harpreet Singh (State R&B Inspector)",
             overall_risk_score=38.0,
-            summary="Pavement distress evaluation on Sector 7 North lane. Discovered deep potholes (avg depth 85mm) and fatigue 'alligator' cracking covering 150m. Paves way for severe rain ponding.",
+            summary="Pavement distress evaluation on Siddipet bypass lane. Discovered deep potholes (avg depth 85mm) and fatigue 'alligator' cracking covering 150m. Paves way for severe rain ponding.",
             status="Completed",
             weather="Hot/Humid, 41°C",
-            traffic_load="45,000 PCU/day (Heavy logistics traffic)",
+            traffic_load="25,000 PCU/day (Heavy logistics traffic)",
             details_json={
                 "inspector_notes": "Sub-base layer deterioration at specific sections. Micro-surfacing will be insufficient; requires 40mm milling and overlay.",
                 "agents_involved": ["InspectorAgent", "RiskAnalystAgent"]
@@ -212,7 +377,7 @@ def seed_database():
 
         print("Creating mock defects...")
         
-        # Ganga Bridge Defects
+        # Telugu Thalli Flyover Defects
         db.add_all([
             Defect(
                 id="def-gb-1",
@@ -271,7 +436,7 @@ def seed_database():
             )
         ])
 
-        # Metro Tunnel Defects
+        # Begumpet Stormwater Nala Defects
         db.add_all([
             Defect(
                 id="def-mt-1",
@@ -279,9 +444,9 @@ def seed_database():
                 asset_id="metro-tunnel-line3",
                 type="Leakage",
                 severity="Medium",
-                location_description="Segment Joint 45, East Sidewall",
+                location_description="Joint 45, East Sidewall",
                 confidence=0.92,
-                description="Active water seepage through the precast lining rubber gasket. Causes moisture buildup on steel rail fixtures.",
+                description="Active water seepage through the concrete joint lining. Causes moisture buildup and concrete leaching.",
                 image_url=""
             ),
             Defect(
@@ -290,14 +455,14 @@ def seed_database():
                 asset_id="metro-tunnel-line3",
                 type="Rust",
                 severity="Low",
-                location_description="Rail Tie Base, adjacent to Joint 45",
+                location_description="Structural Steel Bracket, adjacent to Joint 45",
                 confidence=0.90,
-                description="Surface oxidation starting on the rail fasteners due to constant water dripping from Joint 45.",
+                description="Surface oxidation starting on the steel wall brackets due to constant water dripping from Joint 45.",
                 image_url=""
             )
         ])
 
-        # Executive Plaza Defects
+        # Osmania General Hospital Defects
         db.add_all([
             Defect(
                 id="def-ep-1",
@@ -323,7 +488,7 @@ def seed_database():
             )
         ])
 
-        # NH44 Defects
+        # State Highway 1 Defects
         db.add_all([
             Defect(
                 id="def-nh-1",
@@ -367,16 +532,16 @@ def seed_database():
                 id="maint-gb-2",
                 asset_id="ganga-bridge-sec12",
                 repair_date=datetime.utcnow() - timedelta(days=40),
-                repair_type="Scaffolding installation & safety netting",
+                repair_type="Safety netting & scaffolding installation",
                 cost=75000.0,
                 status="Completed",
-                notes="Installed structural debris nets under Span 3 to prevent loose concrete chunks from falling onto water transit lanes below."
+                notes="Installed structural debris nets under Span 3 to prevent loose concrete chunks from falling onto road transit lanes below."
             ),
             MaintenanceHistory(
                 id="maint-mt-1",
                 asset_id="metro-tunnel-line3",
                 repair_date=datetime.utcnow() - timedelta(days=180),
-                repair_type="Drainage gutter clearing",
+                repair_type="Drainage channel desilting",
                 cost=12000.0,
                 status="Completed",
                 notes="Cleared carbonate deposits from track bed drainage gutter to prevent water logging."
@@ -386,7 +551,7 @@ def seed_database():
 
         print("Creating mock simulations...")
         
-        # Simulations for Ganga Bridge (Pier 2 / Span 3 cracks)
+        # Simulations for Telugu Thalli Flyover (Pier 2 / Span 3 cracks)
         db.add_all([
             Simulation(
                 id="sim-gb-now",
@@ -408,7 +573,7 @@ def seed_database():
                 projected_risk="Warning",
                 estimated_repair_cost=480000.0,
                 code_reference="IRC:SP-18 (Section 4 - Repair)",
-                logic_explanation="Under constant vibrations from heavy overloaded traffic, Pier 2 shear cracks will extend past the 6mm structural limit. Micro-cracking in concrete matrix expands. Postponing repairs permits internal steel to scale more. Cost doubles due to required temporary structural shoring to lift girders while column is repaired."
+                logic_explanation="Under constant vibrations from heavy urban traffic, Pier 2 shear cracks will extend past the 6mm structural limit. Micro-cracking in concrete matrix expands. Postponing repairs permits internal steel to scale more. Cost doubles due to required temporary structural shoring to lift girders while column is repaired."
             ),
             Simulation(
                 id="sim-gb-6m",
@@ -419,7 +584,7 @@ def seed_database():
                 projected_risk="Critical",
                 estimated_repair_cost=1200000.0,
                 code_reference="IRC:SP-18 (Section 6 - Rehabilitation)",
-                logic_explanation="Substantial risk of shear failure under peak axle load. Steel section loss increases to 25%, causing loss of mechanical bond between steel and concrete. Heavy vehicles must be banned, restricting bridge to single-lane light traffic. Remediation requires external post-tensioning tendons or structural steel collar plating."
+                logic_explanation="Substantial risk of shear failure under peak axle load. Steel section loss increases to 25%, causing loss of mechanical bond between steel and concrete. Heavy vehicles must be banned, restricting flyover to light traffic. Remediation requires external post-tensioning tendons or structural steel collar plating."
             ),
             Simulation(
                 id="sim-gb-rain",
@@ -441,11 +606,11 @@ def seed_database():
                 projected_risk="Critical",
                 estimated_repair_cost=900000.0,
                 code_reference="IRC:6-2016 (Standard Live Loads)",
-                logic_explanation="Increasing the frequency of heavy multi-axle trucks increases cyclic fatigue stress. The cracks on Pier 2 will propagate at an exponential rate. Fatigue limit of shear steel is crossed, leading to brittle concrete failure."
+                logic_explanation="Increasing the frequency of heavy multi-axle buses increases cyclic fatigue stress. The cracks on Pier 2 will propagate at an exponential rate. Fatigue limit of shear steel is crossed, leading to brittle concrete failure."
             )
         ])
 
-        # Simulations for Executive Plaza (Column B4 cracks)
+        # Simulations for Osmania Hospital (Column B4 cracks)
         db.add_all([
             Simulation(
                 id="sim-ep-now",
@@ -467,7 +632,7 @@ def seed_database():
                 projected_risk="Warning",
                 estimated_repair_cost=350000.0,
                 code_reference="IS-456 Cl 26 (Structural Safety)",
-                logic_explanation="Cracks propagate vertically. Progressive structural settlement in basement parking column causes upper floor slabs to tilt slightly, cracking drywall partitions on floors 1-3. Costs surge due to floor level correction requirements."
+                logic_explanation="Cracks propagate vertically. Progressive structural settlement in column B4 causes upper floor slabs to tilt slightly. Costs surge due to historical structural preservation care protocols required."
             )
         ])
         db.commit()
@@ -492,8 +657,8 @@ def seed_database():
                 asset_id="metro-tunnel-line3",
                 key="water_ingress_profile",
                 value_json={
-                    "ingress_rate": "Moderate leakage at Segment Joint 45. Dripping rate of 2 liters/hour.",
-                    "secondary_hazards": "Active corrosion of nearby steel rails and rail fasteners. Long-term concrete leaching risks voids.",
+                    "ingress_rate": "Moderate leakage at Concrete Joint 45. Dripping rate of 2 liters/hour.",
+                    "secondary_hazards": "Active corrosion of nearby steel braces and joint reinforcement. Long-term concrete leaching risks voids.",
                     "remediation_guideline": "Specify polyurethane chemical grout injection at joint boundaries to re-establish seal integrity."
                 }
             ),

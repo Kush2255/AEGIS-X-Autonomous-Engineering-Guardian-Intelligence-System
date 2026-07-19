@@ -85,6 +85,15 @@ class AssetBase(BaseModel):
     current_health_score: float
     risk_level: str
     image_url: Optional[str] = None
+    
+    # Telangana Pilot fields
+    district: Optional[str] = None
+    last_inspection_date: Optional[str] = None
+    inspection_frequency: Optional[str] = None
+    responsible_department: Optional[str] = None
+    asset_age: Optional[int] = None
+    current_status: Optional[str] = None
+
     created_at: datetime
     updated_at: datetime
 

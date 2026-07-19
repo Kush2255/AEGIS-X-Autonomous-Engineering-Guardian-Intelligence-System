@@ -25,6 +25,10 @@ export const UploadInspection: React.FC<UploadInspectionProps> = ({ onBack, onNa
   const [trafficLoad, setTrafficLoad] = useState('Standard Highway Traffic');
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [docFile, setDocFile] = useState<File | null>(null);
+  const [videoFile, setVideoFile] = useState<File | null>(null);
+  const [voiceFile, setVoiceFile] = useState<File | null>(null);
+  const [sensorFile, setSensorFile] = useState<File | null>(null);
+  const [gpsInput, setGpsInput] = useState('');
   
   // Pipeline status states
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -71,6 +75,10 @@ export const UploadInspection: React.FC<UploadInspectionProps> = ({ onBack, onNa
     formData.append('traffic_load', trafficLoad);
     if (imageFile) formData.append('image', imageFile);
     if (docFile) formData.append('report_file', docFile);
+    if (videoFile) formData.append('video_file', videoFile);
+    if (voiceFile) formData.append('voice_file', voiceFile);
+    if (sensorFile) formData.append('sensor_file', sensorFile);
+    if (gpsInput) formData.append('gps_override', gpsInput);
 
     try {
       // 1. Submit upload and fetch final coordinates payload
@@ -244,6 +252,64 @@ export const UploadInspection: React.FC<UploadInspectionProps> = ({ onBack, onNa
                     <span className="text-[10px] text-gray-300 block truncate">{docFile ? docFile.name : 'Upload PDF'}</span>
                   </div>
                 </div>
+              </div>
+
+              {/* Multi-modal drone video, voice note, and sensor logs */}
+              <div className="grid grid-cols-3 gap-3">
+                <div className="space-y-1.5">
+                  <label className="text-[10px] text-dark-muted uppercase font-bold tracking-wider">Drone Video</label>
+                  <div className="relative border border-dashed border-dark-border hover:border-brand-primary rounded p-2.5 text-center transition-colors cursor-pointer">
+                    <input
+                      type="file"
+                      accept="video/*"
+                      onChange={(e) => setVideoFile(e.target.files?.[0] || null)}
+                      disabled={isSubmitting}
+                      className="absolute inset-0 opacity-0 cursor-pointer"
+                    />
+                    <span className="text-[9px] text-gray-300 block truncate">{videoFile ? videoFile.name : 'Upload MP4'}</span>
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-[10px] text-dark-muted uppercase font-bold tracking-wider">Voice Notes</label>
+                  <div className="relative border border-dashed border-dark-border hover:border-brand-primary rounded p-2.5 text-center transition-colors cursor-pointer">
+                    <input
+                      type="file"
+                      accept="audio/*"
+                      onChange={(e) => setVoiceFile(e.target.files?.[0] || null)}
+                      disabled={isSubmitting}
+                      className="absolute inset-0 opacity-0 cursor-pointer"
+                    />
+                    <span className="text-[9px] text-gray-300 block truncate">{voiceFile ? voiceFile.name : 'Upload WAV'}</span>
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-[10px] text-dark-muted uppercase font-bold tracking-wider">Sensor Logs</label>
+                  <div className="relative border border-dashed border-dark-border hover:border-brand-primary rounded p-2.5 text-center transition-colors cursor-pointer">
+                    <input
+                      type="file"
+                      accept=".csv,.json"
+                      onChange={(e) => setSensorFile(e.target.files?.[0] || null)}
+                      disabled={isSubmitting}
+                      className="absolute inset-0 opacity-0 cursor-pointer"
+                    />
+                    <span className="text-[9px] text-gray-300 block truncate">{sensorFile ? sensorFile.name : 'Upload CSV'}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* GPS coordinates override */}
+              <div className="space-y-1">
+                <label className="text-[10px] text-dark-muted uppercase font-bold tracking-wider">GPS Coordinates Override</label>
+                <input
+                  type="text"
+                  placeholder="e.g. 25.3176, 83.0062"
+                  value={gpsInput}
+                  onChange={(e) => setGpsInput(e.target.value)}
+                  disabled={isSubmitting}
+                  className="w-full bg-dark-bg/60 border border-dark-border focus:border-brand-primary text-gray-200 py-2 px-3 rounded focus:outline-none placeholder-dark-muted"
+                />
               </div>
 
               <button

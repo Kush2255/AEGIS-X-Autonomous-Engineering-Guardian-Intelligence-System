@@ -2,6 +2,8 @@ import React from 'react';
 import ReactFlow, { Background } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { Shield, ArrowRight, Activity, Terminal, Layers, Cpu, Server } from 'lucide-react';
+import { ThreeDConstellation } from '../components/ThreeDConstellation';
+import { ThreeDTilt } from '../components/ThreeDTilt';
 
 interface LandingProps {
   onEnterApp: () => void;
@@ -83,6 +85,9 @@ export const Landing: React.FC<LandingProps> = ({ onEnterApp }) => {
 
   return (
     <div className="min-h-screen bg-dark-bg text-white relative">
+      {/* Background 3D Constellation & Grid */}
+      <ThreeDConstellation />
+
       {/* Background radial effects */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-0">
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-500/10 rounded-full blur-[120px]" />
@@ -96,7 +101,7 @@ export const Landing: React.FC<LandingProps> = ({ onEnterApp }) => {
             <Shield className="w-6 h-6 text-brand-primary" />
           </div>
           <span className="font-display text-2xl font-black tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-200 to-pink-400">
-            AEGIS X
+            PRAHARI AI
           </span>
         </div>
         <div className="flex items-center space-x-6">
@@ -119,7 +124,7 @@ export const Landing: React.FC<LandingProps> = ({ onEnterApp }) => {
         <div className="lg:col-span-7 space-y-8">
           <div className="inline-flex items-center space-x-2 bg-dark-card border border-dark-border px-3 py-1.5 rounded text-xs text-brand-primary font-mono">
             <Cpu className="w-4 h-4 text-brand-primary animate-spin" style={{ animationDuration: '4s' }} />
-            <span>EXPLAINABLE DECISION INTELLIGENCE PLATFORM</span>
+            <span>TELANGANA PILOT DEPLOYMENT (NATIONWIDE READY)</span>
           </div>
           
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-400">
@@ -131,7 +136,8 @@ export const Landing: React.FC<LandingProps> = ({ onEnterApp }) => {
           </h1>
 
           <p className="text-lg text-dark-muted max-w-2xl leading-relaxed">
-            AEGIS X is an enterprise AI-powered Predictive Infrastructure Digital Twin. 
+            PRAHARI AI is an enterprise AI-powered Infrastructure Intelligence Platform. 
+            Built for nationwide deployment, validated through a Telangana pilot. 
             It leverages Gemini Vision, LangGraph multi-agent planning, and structural RAG standards 
             to evaluate inspection footage, model degradation, and compile compliance audit reports automatically.
           </p>
@@ -169,16 +175,17 @@ export const Landing: React.FC<LandingProps> = ({ onEnterApp }) => {
           </div>
         </div>
 
-        {/* Right column (Animated Mockup) */}
-        <div className="lg:col-span-5 h-[480px] glass-panel rounded-2xl relative p-4 flex flex-col shadow-glass">
-          <div className="flex items-center justify-between pb-3 border-b border-dark-border mb-3">
-            <div className="flex space-x-1.5">
-              <span className="w-3 h-3 bg-brand-danger/30 rounded-full" />
-              <span className="w-3 h-3 bg-brand-warning/30 rounded-full" />
-              <span className="w-3 h-3 bg-brand-success/30 rounded-full" />
+        {/* Right column (Animated Mockup inside 3D perspective deck) */}
+        <div className="lg:col-span-5 h-[480px] perspective-deck flex items-center justify-center">
+          <div className="w-full h-full glass-panel rounded-2xl relative p-4 flex flex-col shadow-glass tilted-flow-container">
+            <div className="flex items-center justify-between pb-3 border-b border-dark-border mb-3">
+              <div className="flex space-x-1.5">
+                <span className="w-3 h-3 bg-brand-danger/30 rounded-full" />
+                <span className="w-3 h-3 bg-brand-warning/30 rounded-full" />
+                <span className="w-3 h-3 bg-brand-success/30 rounded-full" />
+              </div>
+              <span className="text-[10px] font-mono text-dark-muted">AEGIS_AGENT_FLOW.PY</span>
             </div>
-            <span className="text-[10px] font-mono text-dark-muted">AEGIS_AGENT_FLOW.PY</span>
-          </div>
           
           {/* Simplified React Flow preview inside landing */}
           <div className="flex-1 rounded bg-black/40 border border-dark-border relative overflow-hidden">
@@ -196,7 +203,8 @@ export const Landing: React.FC<LandingProps> = ({ onEnterApp }) => {
             </ReactFlow>
           </div>
         </div>
-      </main>
+      </div>
+    </main>
 
       {/* Features Grid */}
       <section className="relative max-w-7xl mx-auto px-6 py-20 border-t border-dark-border">
@@ -211,13 +219,15 @@ export const Landing: React.FC<LandingProps> = ({ onEnterApp }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((f, idx) => (
-            <div key={idx} className="glass-panel p-8 rounded-xl glass-panel-hover flex flex-col space-y-4">
-              <div className="bg-dark-bg p-3 rounded-lg border border-dark-border w-fit">
-                {f.icon}
+            <ThreeDTilt key={idx} className="h-full">
+              <div className="glass-panel p-8 rounded-xl glass-panel-hover flex flex-col space-y-4 h-full">
+                <div className="bg-dark-bg p-3 rounded-lg border border-dark-border w-fit">
+                  {f.icon}
+                </div>
+                <h3 className="font-display text-xl font-bold text-gray-200">{f.title}</h3>
+                <p className="text-sm text-dark-muted leading-relaxed">{f.description}</p>
               </div>
-              <h3 className="font-display text-xl font-bold text-gray-200">{f.title}</h3>
-              <p className="text-sm text-dark-muted leading-relaxed">{f.description}</p>
-            </div>
+            </ThreeDTilt>
           ))}
         </div>
       </section>
@@ -287,7 +297,7 @@ export const Landing: React.FC<LandingProps> = ({ onEnterApp }) => {
 
       {/* Footer */}
       <footer className="border-t border-dark-border py-8 text-center text-xs text-dark-muted z-10 relative">
-        <p>© 2026 AEGIS X. Fully compliance-grounded Engineering Decision Intelligence. All rights reserved.</p>
+        <p>© 2026 PRAHARI AI. Fully compliance-grounded Engineering Decision Intelligence. All rights reserved.</p>
       </footer>
     </div>
   );

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Float, DateTime, ForeignKey, Text, JSON
+from sqlalchemy import Column, String, Float, DateTime, ForeignKey, Text, JSON, Integer
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from .database import Base
@@ -15,6 +15,15 @@ class Asset(Base):
     current_health_score = Column(Float, default=100.0)
     risk_level = Column(String, default="Safe") # Safe, Monitor, Warning, Critical
     image_url = Column(String, nullable=True)
+    
+    # Telangana Pilot columns
+    district = Column(String, nullable=True)
+    last_inspection_date = Column(String, nullable=True)
+    inspection_frequency = Column(String, nullable=True)
+    responsible_department = Column(String, nullable=True)
+    asset_age = Column(Integer, nullable=True)
+    current_status = Column(String, nullable=True)
+
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
@@ -102,3 +111,24 @@ class Simulation(Base):
 
     # Relationships
     inspection = relationship("Inspection", back_populates="simulations")
+
+class CollaborationComment(Base):
+    __tablename__ = "collaboration_comments"
+
+    id = Column(String, primary_key=True, index=True)
+    asset_id = Column(String, ForeignKey("assets.id"), nullable=False)
+    author = Column(String, nullable=False)
+    content = Column(Text, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+class CollaborationTask(Base):
+    __tablename__ = "collaboration_tasks"
+
+    id = Column(String, primary_key=True, index=True)
+    asset_id = Column(String, ForeignKey("assets.id"), nullable=False)
+    title = Column(String, nullable=False)
+    assigned_to = Column(String, nullable=True)
+    status = Column(String, default="Pending") # Pending, In Progress, Completed
+    priority = Column(String, default="Medium") # Low, Medium, High, Critical
+    created_at = Column(DateTime, default=datetime.utcnow)
+

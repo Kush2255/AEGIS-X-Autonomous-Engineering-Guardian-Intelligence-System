@@ -1,56 +1,373 @@
 [
   {
+    "source": "collection_01_engineering_standards.md",
+    "collection_id": "Collection 01",
+    "title": "COLLECTION 01 ENGINEERING STANDARDS - Overview",
+    "content": "# Collection 01: Engineering Standards\nSource: Bureau of Indian Standards (BIS) / Indian Roads Congress (IRC)\nYear: 2000-2021\nVersion: IS 456:2000, IRC:112-2020\nDomain: Civil & Structural Engineering\nApplicable Infrastructure: Bridges, Buildings, Flyovers"
+  },
+  {
+    "source": "collection_01_engineering_standards.md",
+    "collection_id": "Collection 01",
+    "title": "COLLECTION 01 ENGINEERING STANDARDS - IS 456 Clause 35.3.2 - Permissible Crack Widths in RMC members",
+    "content": "IS 456 Clause 35.3.2 - Permissible Crack Widths in RMC members\n\nFor durability, surface cracks under SLS must not exceed:\n- Mild Exposure: 0.3 mm (e.g., standard indoor beams/slabs)\n- Moderate Exposure: 0.2 mm (structures exposed to monsoons, damp basements)\n- Severe Exposure: 0.1 mm (concrete exposed to aggressive chemicals, marine zones)\n- Critical Limit: > 1.5 mm indicates active structural shear stress requiring epoxy resin grouting."
+  },
+  {
+    "source": "collection_01_engineering_standards.md",
+    "collection_id": "Collection 01",
+    "title": "COLLECTION 01 ENGINEERING STANDARDS - IRC 112 Clause 12.3 - Shear Reinforcement and Crack Limits",
+    "content": "IRC 112 Clause 12.3 - Shear Reinforcement and Crack Limits\n\nPrestressed concrete box girders must have vertical stirrups spacing checked against Class 2 crack criteria. Surface cracks at shear zones near pier junctions must not exceed 0.2mm to prevent aggregate lock slip."
+  },
+  {
+    "source": "collection_02_infrastructure_assets.md",
+    "collection_id": "Collection 02",
+    "title": "COLLECTION 02 INFRASTRUCTURE ASSETS - Overview",
+    "content": "# Collection 02: Infrastructure Assets\nSource: TSRDC / GHMC Assets Inventory Manual\nYear: 2024\nVersion: Asset-Inv-V2.1\nDomain: Lifecycle Management\nApplicable Infrastructure: State Highways, Bridges, Drainage Networks, Water utilities"
+  },
+  {
+    "source": "collection_02_infrastructure_assets.md",
+    "collection_id": "Collection 02",
+    "title": "COLLECTION 02 INFRASTRUCTURE ASSETS - Section 1: Pilot Assets Inventory Specifications",
+    "content": "Section 1: Pilot Assets Inventory Specifications\n\nAssets monitored under the pilot program:\n- Roads & State Highways (e.g., Telangana State Highway 1 Siddipet Section)\n- Flyovers & Bridges (e.g., Telugu Thalli Flyover Hyderabad)\n- Public Buildings & Heritage Blocks (e.g., Osmania General Hospital)\n- Stormwater Drainage Networks (e.g., Begumpet Nala Canal)\n- Water Supply Utilities (e.g., Mission Bhagiratha Water Treatment Plant)"
+  },
+  {
+    "source": "collection_02_infrastructure_assets.md",
+    "collection_id": "Collection 02",
+    "title": "COLLECTION 02 INFRASTRUCTURE ASSETS - Section 2: Scale expansion strategy",
+    "content": "Section 2: Scale expansion strategy\n\nThe inventory system architecture coordinates state metadata. Future extension to National Highways, airports, metro systems, and reservoirs requires only assigning a state identifier prefix without changes to data schema."
+  },
+  {
+    "source": "collection_03_defect_library.md",
+    "collection_id": "Collection 03",
+    "title": "COLLECTION 03 DEFECT LIBRARY - Overview",
+    "content": "# Collection 03: Defect Library\nSource: MoRTH Bridge Inspectors Reference Manual\nYear: 2018\nVersion: MoRTH-BIRM-Ed3\nDomain: Defect Diagnostics\nApplicable Infrastructure: All structures"
+  },
+  {
+    "source": "collection_03_defect_library.md",
+    "collection_id": "Collection 03",
+    "title": "COLLECTION 03 DEFECT LIBRARY - Section 1: Concrete Spalling & Reinforcement Exposure",
+    "content": "Section 1: Concrete Spalling & Reinforcement Exposure\n\nConcrete spalling is characterized by detaching concrete pieces, exposing steel reinforcement bars. It is driven by rust expansion.\n- Severity Rating:\n  - Cosmetic: Superficial peeling < 20mm depth. Rebars unexposed.\n  - High: Exposed steel rebars, surface rust scaling.\n  - Critical: Rebar section loss > 10% with active monsoonal leaching."
+  },
+  {
+    "source": "collection_03_defect_library.md",
+    "collection_id": "Collection 03",
+    "title": "COLLECTION 03 DEFECT LIBRARY - Section 2: Bituminous Asphalt Alligator Cracking",
+    "content": "Section 2: Bituminous Asphalt Alligator Cracking\n\nFatigue or alligator cracking occurs in bituminous pavement due to load overloading and subgrade moisture saturation. Indicates sub-base layer settlement and requires milling and overlay (40mm thickness) rather than simple seal coats."
+  },
+  {
+    "source": "collection_04_inspection_manuals.md",
+    "collection_id": "Collection 04",
+    "title": "COLLECTION 04 INSPECTION MANUALS - Overview",
+    "content": "# Collection 04: Inspection Manuals\nSource: CPWD Maintenance Manual & RDSO Bridge Rules\nYear: 2023\nVersion: CPWD-MM-2023\nDomain: Quality Assurance & Inspections\nApplicable Infrastructure: Government Buildings, Railway Bridges"
+  },
+  {
+    "source": "collection_04_inspection_manuals.md",
+    "collection_id": "Collection 04",
+    "title": "COLLECTION 04 INSPECTION MANUALS - Section 1: Visual Inspection Checklists",
+    "content": "Section 1: Visual Inspection Checklists\n\nInspectors must check:\n- Beams & Columns: Shear crack presence, diagonal cracking at beam-column junctions, moisture staining, spalling.\n- Drainage systems: Clogging, weep hole blockages in retaining structures.\n- Foundation structures: Erosion, soil scours near bridge piers."
+  },
+  {
+    "source": "collection_04_inspection_manuals.md",
+    "collection_id": "Collection 04",
+    "title": "COLLECTION 04 INSPECTION MANUALS - Section 2: Non-Destructive Testing (NDT) Protocol",
+    "content": "Section 2: Non-Destructive Testing (NDT) Protocol\n\nPerform Ultrasonic Pulse Velocity (UPV) tests and rebound hammer tests to evaluate concrete compressive strength when surface defects exceed warning thresholds."
+  },
+  {
+    "source": "collection_05_maintenance_procedures.md",
+    "collection_id": "Collection 05",
+    "title": "COLLECTION 05 MAINTENANCE PROCEDURES - Overview",
+    "content": "# Collection 05: Maintenance Procedures\nSource: TSRDC Road Maintenance Schedule Manual\nYear: 2022\nVersion: TSRDC-MSM-2022\nDomain: Operations\nApplicable Infrastructure: State Highways, Municipal Roads"
+  },
+  {
+    "source": "collection_05_maintenance_procedures.md",
+    "collection_id": "Collection 05",
+    "title": "COLLECTION 05 MAINTENANCE PROCEDURES - Section 1: Routine Pavement Crack Sealing",
+    "content": "Section 1: Routine Pavement Crack Sealing\n\nBituminous road cracks must be sealed before pre-monsoon showers using polymer-modified hot-pour sealants to prevent subgrade water ponding and sub-base softening."
+  },
+  {
+    "source": "collection_05_maintenance_procedures.md",
+    "collection_id": "Collection 05",
+    "title": "COLLECTION 05 MAINTENANCE PROCEDURES - Section 2: Drainage Clearing & Desiltation",
+    "content": "Section 2: Drainage Clearing & Desiltation\n\nDesiltation of Begumpet stormwater channels must be finalized by April 30 annually. Concrete channel side linings must be patched with cement mortar to avoid soil erosion at joint walls."
+  },
+  {
+    "source": "collection_06_repair_methods.md",
+    "collection_id": "Collection 06",
+    "title": "COLLECTION 06 REPAIR METHODS - Overview",
+    "content": "# Collection 06: Repair Methods\nSource: CPWD Guidelines for Structural Rehabilitation & IRC:SP-18\nYear: 2021\nVersion: CPWD-SR-2021\nDomain: Structural Repairs\nApplicable Infrastructure: Bridges, Buildings, Flyovers"
+  },
+  {
+    "source": "collection_06_repair_methods.md",
+    "collection_id": "Collection 06",
+    "title": "COLLECTION 06 REPAIR METHODS - Section 1: Epoxy Resin Pressure Grouting",
+    "content": "Section 1: Epoxy Resin Pressure Grouting\n\nInject low-viscosity epoxy resin under pressure (0.2 to 0.7 MPa) for cracks between 0.3mm and 5.0mm. Epoxy binds concrete surfaces and restores monolithic strength."
+  },
+  {
+    "source": "collection_06_repair_methods.md",
+    "collection_id": "Collection 06",
+    "title": "COLLECTION 06 REPAIR METHODS - Section 2: Carbon Fiber Reinforced Polymer (CFRP) Wrapping",
+    "content": "Section 2: Carbon Fiber Reinforced Polymer (CFRP) Wrapping\n\nFor columns with steel section loss between 10% and 25%:\n- Expose steel, clean rust, apply zinc primer.\n- Patch profile using polymer-modified structural mortar.\n- Wrap column with high-tensile CFRP sheets using epoxy saturant to restore girder shear strength."
+  },
+  {
+    "source": "collection_07_risk_assessment.md",
+    "collection_id": "Collection 07",
+    "title": "COLLECTION 07 RISK ASSESSMENT - Overview",
+    "content": "# Collection 07: Risk Assessment\nSource: NDMA Structural Risk Evaluation Guidelines\nYear: 2023\nVersion: NDMA-SR-2023\nDomain: Risk Management\nApplicable Infrastructure: All assets"
+  },
+  {
+    "source": "collection_07_risk_assessment.md",
+    "collection_id": "Collection 07",
+    "title": "COLLECTION 07 RISK ASSESSMENT - Section 1: Structural Health Score Calculation",
+    "content": "Section 1: Structural Health Score Calculation\n\nAsset health index rating is computed as:\n- Health = 100 - (Defect Severity Score * Exposure Weight * Age Multiplier)\n- Risk levels:\n  - Safe: Health Score 90 - 100\n  - Monitor: Health Score 75 - 89 (requires biannual check)\n  - Warning: Health Score 60 - 74 (requires immediate inspection)\n  - Critical: Health Score < 60 (immediate repair needed, load restrictions)"
+  },
+  {
+    "source": "collection_08_weather_environmental.md",
+    "collection_id": "Collection 08",
+    "title": "COLLECTION 08 WEATHER ENVIRONMENTAL - Overview",
+    "content": "# Collection 08: Weather & Environmental Effects\nSource: Indian Meteorological Department (IMD) / CRRI\nYear: 2024\nVersion: IMD-ENV-2024\nDomain: Climatology\nApplicable Infrastructure: Roads, Bridges, Drainage"
+  },
+  {
+    "source": "collection_08_weather_environmental.md",
+    "collection_id": "Collection 08",
+    "title": "COLLECTION 08 WEATHER ENVIRONMENTAL - Section 1: Monsoon Rainfall Runoff Impact",
+    "content": "Section 1: Monsoon Rainfall Runoff Impact\n\nHigh rainfall events in Telangana (exceeding 80mm/day) surge water velocity in urban nalas, causing high-volume scour at bridge pier bases. IMD flood forecasting metrics should trigger alert levels."
+  },
+  {
+    "source": "collection_08_weather_environmental.md",
+    "collection_id": "Collection 08",
+    "title": "COLLECTION 08 WEATHER ENVIRONMENTAL - Section 2: Thermal Expansion Stress",
+    "content": "Section 2: Thermal Expansion Stress\n\nSummer heat waves in Hyderabad and Karimnagar (temperatures > 42C) induce thermal stress on concrete expansion joints, causing joint lock and hairline cracking on deck slabs."
+  },
+  {
+    "source": "collection_09_disaster_management.md",
+    "collection_id": "Collection 09",
+    "title": "COLLECTION 09 DISASTER MANAGEMENT - Overview",
+    "content": "# Collection 09: Disaster Management\nSource: National Disaster Management Authority (NDMA) / TSDMA\nYear: 2022\nVersion: NDMA-DM-2022\nDomain: Emergency Response\nApplicable Infrastructure: All assets"
+  },
+  {
+    "source": "collection_09_disaster_management.md",
+    "collection_id": "Collection 09",
+    "title": "COLLECTION 09 DISASTER MANAGEMENT - Section 1: Rapid Post-Flood Structural Assessment",
+    "content": "Section 1: Rapid Post-Flood Structural Assessment\n\nIn the event of flash flooding in Hyderabad, structural engineers must execute:\n- Visual inspection of bridge pier settlements.\n- Inspection of drainage conduits for blocks.\n- Building basement dampness checking to verify foundation safety."
+  },
+  {
+    "source": "collection_10_historical_case_studies.md",
+    "collection_id": "Collection 10",
+    "title": "COLLECTION 10 HISTORICAL CASE STUDIES - Overview",
+    "content": "# Collection 10: Historical Case Studies\nSource: CRRI Infrastructure Failure Case Books\nYear: 2019\nVersion: CRRI-FCB-2019\nDomain: Forensic Engineering\nApplicable Infrastructure: Bridges, Buildings"
+  },
+  {
+    "source": "collection_10_historical_case_studies.md",
+    "collection_id": "Collection 10",
+    "title": "COLLECTION 10 HISTORICAL CASE STUDIES - Section 1: Mahad Bridge Collapse Analysis (2016)",
+    "content": "Section 1: Mahad Bridge Collapse Analysis (2016)\n\nThe collapse of the historic bridge on the Savitri River was driven by foundation scouring that went undetected due to turbid water. Lesson learned: underwater ultrasonic scour measurements must be scheduled post-monsoon."
+  },
+  {
+    "source": "collection_11_government_policies.md",
+    "collection_id": "Collection 11",
+    "title": "COLLECTION 11 GOVERNMENT POLICIES - Overview",
+    "content": "# Collection 11: Government Policies\nSource: Ministry of Housing and Urban Affairs (MoHUA) / Smart Cities Mission\nYear: 2023\nVersion: SCM-AP-2023\nDomain: Governance & Compliance\nApplicable Infrastructure: Smart City Assets, Utilities"
+  },
+  {
+    "source": "collection_11_government_policies.md",
+    "collection_id": "Collection 11",
+    "title": "COLLECTION 11 GOVERNMENT POLICIES - Section 1: Municipal Infrastructure Asset Management",
+    "content": "Section 1: Municipal Infrastructure Asset Management\n\nSmart City guidelines require digital twins for municipal roads and buildings, linking geographic coordinates with condition ratings to optimize budget allocations."
+  },
+  {
+    "source": "collection_12_engineering_glossary.md",
+    "collection_id": "Collection 12",
+    "title": "COLLECTION 12 ENGINEERING GLOSSARY - Overview",
+    "content": "# Collection 12: Engineering Glossary\nSource: CPWD Engineering Terminology Manual\nYear: 2020\nVersion: CPWD-ETM-2020\nDomain: Terminology\nApplicable Infrastructure: All assets"
+  },
+  {
+    "source": "collection_12_engineering_glossary.md",
+    "collection_id": "Collection 12",
+    "title": "COLLECTION 12 ENGINEERING GLOSSARY - Section 1: Glossary of Terms",
+    "content": "Section 1: Glossary of Terms\n\n- **Carbonation**: Chemical reaction where atmospheric CO2 diffuses into concrete, lowering pH and depassivating steel reinforcement.\n- **Efflorescence**: White powdery calcium carbonate deposits forming on concrete surfaces due to water leaching.\n- **CFRP**: Carbon Fiber Reinforced Polymer composites used for structural wrapping."
+  },
+  {
+    "source": "collection_13_ai_reasoning_knowledge.md",
+    "collection_id": "Collection 13",
+    "title": "COLLECTION 13 AI REASONING KNOWLEDGE - Overview",
+    "content": "# Collection 13: AI Reasoning Knowledge\nSource: PRAHARI AI Explainable Decision Architecture\nYear: 2026\nVersion: PRAHARI-AI-R1\nDomain: Explainable AI\nApplicable Infrastructure: All assets"
+  },
+  {
+    "source": "collection_13_ai_reasoning_knowledge.md",
+    "collection_id": "Collection 13",
+    "title": "COLLECTION 13 AI REASONING KNOWLEDGE - Section 1: AI Decision Chains & Confidence Rating",
+    "content": "Section 1: AI Decision Chains & Confidence Rating\n\nAI Agents assess risk by combining visual defect confidence metrics (from Vision Agent) with structural codes (Knowledge Agent). Confidence is rated high (>90%) when visual spalling coordinates match code references for exposed rebar cover limits."
+  },
+  {
+    "source": "collection_14_materials_engineering.md",
+    "collection_id": "Collection 14",
+    "title": "COLLECTION 14 MATERIALS ENGINEERING - Overview",
+    "content": "# Collection 14: Materials Engineering\nSource: BIS Concrete & Steel Specifications\nYear: 2021\nVersion: BIS-MAT-2021\nDomain: Material Durability\nApplicable Infrastructure: Bridges, Buildings"
+  },
+  {
+    "source": "collection_14_materials_engineering.md",
+    "collection_id": "Collection 14",
+    "title": "COLLECTION 14 MATERIALS ENGINEERING - Section 1: Concrete Durability & Cover Chemistry",
+    "content": "Section 1: Concrete Durability & Cover Chemistry\n\nAlkaline concrete cover (pH 12.5) protects steel rebars by forming a passive oxide film. When carbonation front reaches steel, active corrosion initiates, causing concrete cracking."
+  },
+  {
+    "source": "collection_15_sensors_iot.md",
+    "collection_id": "Collection 15",
+    "title": "COLLECTION 15 SENSORS IOT - Overview",
+    "content": "# Collection 15: Sensors & IoT\nSource: Structural Health Monitoring (SHM) Standards\nYear: 2024\nVersion: SHM-IOT-V1.2\nDomain: IoT Telemetry\nApplicable Infrastructure: Flyovers, Bridges, Dams"
+  },
+  {
+    "source": "collection_15_sensors_iot.md",
+    "collection_id": "Collection 15",
+    "title": "COLLECTION 15 SENSORS IOT - Section 1: Displacement & Vibration Limits",
+    "content": "Section 1: Displacement & Vibration Limits\n\nCrack displacement sensors (LVDTs) alert engineers if crack movement exceeds 0.5mm over 30 days. Accelerometers monitor bridge deck natural frequency; changes indicate loss of stiffness."
+  },
+  {
+    "source": "collection_16_gis_geospatial.md",
+    "collection_id": "Collection 16",
+    "title": "COLLECTION 16 GIS GEOSPATIAL - Overview",
+    "content": "# Collection 16: GIS & Geospatial\nSource: ISRO / Telangana State Spatial Data Infrastructure\nYear: 2023\nVersion: TS-GIS-2023\nDomain: GIS & Mapping\nApplicable Infrastructure: Roads, State Highways"
+  },
+  {
+    "source": "collection_16_gis_geospatial.md",
+    "collection_id": "Collection 16",
+    "title": "COLLECTION 16 GIS GEOSPATIAL - Section 1: Geospatial Risk Indexing",
+    "content": "Section 1: Geospatial Risk Indexing\n\nAssets are mapped in EPSG:4326 coordinate systems. Spatial clustering analyzes risk levels to highlight high-priority maintenance hot zones in Hyderabad and Warangal districts."
+  },
+  {
+    "source": "collection_17_predictive_maintenance.md",
+    "collection_id": "Collection 17",
+    "title": "COLLECTION 17 PREDICTIVE MAINTENANCE - Overview",
+    "content": "# Collection 17: Predictive Maintenance\nSource: CRRI Pavement Remaining Useful Life Models\nYear: 2023\nVersion: CRRI-RUL-2023\nDomain: Predictive Analytics\nApplicable Infrastructure: Roads, Bridges"
+  },
+  {
+    "source": "collection_17_predictive_maintenance.md",
+    "collection_id": "Collection 17",
+    "title": "COLLECTION 17 PREDICTIVE MAINTENANCE - Section 1: Asset Condition Deterioration Curves",
+    "content": "Section 1: Asset Condition Deterioration Curves\n\nPavement deterioration follows a sigmoidal decay curve. Once health score falls below 75%, decay accelerates, requiring structural overlay repairs to prevent subgrade base failure."
+  },
+  {
+    "source": "collection_18_budget_planning.md",
+    "collection_id": "Collection 18",
+    "title": "COLLECTION 18 BUDGET PLANNING - Overview",
+    "content": "# Collection 18: Budget Planning\nSource: HMDA Municipal Capital Budgeting Rules\nYear: 2024\nVersion: HMDA-CB-2024\nDomain: Cost Optimization\nApplicable Infrastructure: Municipal Assets"
+  },
+  {
+    "source": "collection_18_budget_planning.md",
+    "collection_id": "Collection 18",
+    "title": "COLLECTION 18 BUDGET PLANNING - Section 1: Capital Asset Allocation Priority",
+    "content": "Section 1: Capital Asset Allocation Priority\n\nMaintenance priority is given to assets where delay penalties (cost multipliers) are highest. Delaying repair on a Critical bridge doubles restoration costs due to shoring requirements."
+  },
+  {
+    "source": "collection_19_safety_regulations.md",
+    "collection_id": "Collection 19",
+    "title": "COLLECTION 19 SAFETY REGULATIONS - Overview",
+    "content": "# Collection 19: Safety Regulations\nSource: CPWD Worksite Safety Code\nYear: 2022\nVersion: CPWD-WSC-2022\nDomain: Worksite Safety\nApplicable Infrastructure: All construction sites"
+  },
+  {
+    "source": "collection_19_safety_regulations.md",
+    "collection_id": "Collection 19",
+    "title": "COLLECTION 19 SAFETY REGULATIONS - Section 1: Highway Work Zone Layouts",
+    "content": "Section 1: Highway Work Zone Layouts\n\nWork zone maintenance on State Highway 1 must set up advanced warning signs, safety cones, and traffic diversions according to MoRTH guidelines before initiating concrete patching."
+  },
+  {
+    "source": "collection_20_executive_intelligence.md",
+    "collection_id": "Collection 20",
+    "title": "COLLECTION 20 EXECUTIVE INTELLIGENCE - Overview",
+    "content": "# Collection 20: Executive Intelligence\nSource: Smart Cities Mission KPI Matrix\nYear: 2023\nVersion: SCM-KPI-2023\nDomain: Decision Support\nApplicable Infrastructure: All assets"
+  },
+  {
+    "source": "collection_20_executive_intelligence.md",
+    "collection_id": "Collection 20",
+    "title": "COLLECTION 20 EXECUTIVE INTELLIGENCE - Section 1: District Health Indicators",
+    "content": "Section 1: District Health Indicators\n\nDistrict ratings are calculated as the mean health index of all registered public assets in that district. Ranks are generated to guide state funding distributions."
+  },
+  {
+    "source": "collection_21_telangana_state_knowledge.md",
+    "collection_id": "Collection 21",
+    "title": "COLLECTION 21 TELANGANA STATE KNOWLEDGE - Overview",
+    "content": "# Collection 21: Telangana State Knowledge\nSource: Telangana R&B Department / GHMC / HMDA / TSRDC / Mission Bhagiratha\nYear: 2021-2025\nVersion: TS-ENG-2025-Ed1\nDomain: Regional Engineering Guidelines\nApplicable Infrastructure: All Pilot Infrastructure"
+  },
+  {
+    "source": "collection_21_telangana_state_knowledge.md",
+    "collection_id": "Collection 21",
+    "title": "COLLECTION 21 TELANGANA STATE KNOWLEDGE - Section 1: Mission Bhagiratha Water Network Inspection",
+    "content": "Section 1: Mission Bhagiratha Water Network Inspection\n\nWater utility inspections must check:\n- Concrete treatment tanks for signs of alkali-silica reaction (ASR).\n- Leakage at gravity pipeline joints to ensure municipal supply pressure is maintained.\n- Concrete guides on control valves for wear."
+  },
+  {
+    "source": "collection_21_telangana_state_knowledge.md",
+    "collection_id": "Collection 21",
+    "title": "COLLECTION 21 TELANGANA STATE KNOWLEDGE - Section 2: GHMC Begumpet Stormwater Channel Rules",
+    "content": "Section 2: GHMC Begumpet Stormwater Channel Rules\n\nBegumpet Nala drainage walls are subject to localized monsoonal runoff. Concrete retaining linings must be built to withstand peak discharge velocity of 3.5 m/s, with base concrete anchor piling."
+  },
+  {
+    "source": "collection_21_telangana_state_knowledge.md",
+    "collection_id": "Collection 21",
+    "title": "COLLECTION 21 TELANGANA STATE KNOWLEDGE - Section 3: TSRDC State Highway Maintenance Guidelines",
+    "content": "Section 3: TSRDC State Highway Maintenance Guidelines\n\nTSRDC guidelines require regular visual scanning of State Highway 1 (SH-1) bypass pavements. Alligator cracking must be treated within 15 days using polymer asphalt slurry seals to prevent deep subgrade structural decay."
+  },
+  {
     "source": "irc_bridge_codes.md",
+    "collection_id": "General",
     "title": "IRC BRIDGE CODES - Overview",
     "content": "# IRC:SP-18 - Manual for Structural Evaluation of Concrete Bridges"
   },
   {
     "source": "irc_bridge_codes.md",
+    "collection_id": "General",
     "title": "IRC BRIDGE CODES - Section 1: Shear Cracking on Piers and Girders",
     "content": "Section 1: Shear Cracking on Piers and Girders\n\n- **Critical Diagnostics**: Diagonal cracks inclined at 45 degrees near the support (pier junctions) are shear cracks.\n- Unlike flexural cracks, shear cracks are brittle and dangerous.\n- **Urgency Thresholds**:\n  - Crack width < 1.0 mm: Monitor closely at 3-month intervals.\n  - Crack width 1.0 - 3.0 mm: Schedule pressure grouting with low-viscosity epoxy resin.\n  - Crack width > 3.0 mm: Critical structural danger. Impose speed and axle-load restrictions immediately. Restructure bridge girder loads.\n  - Crack width > 5.0 mm: Imminent local shear failure. Close the bridge span to heavy freight immediately."
   },
   {
     "source": "irc_bridge_codes.md",
+    "collection_id": "General",
     "title": "IRC BRIDGE CODES - Section 2: Concrete Spalling on Deck Girders",
     "content": "Section 2: Concrete Spalling on Deck Girders\n\n- Spalling on the underside of deck slabs or girders weakens the tensile flange.\n- If section loss of tensile reinforcement exceeds 10%, structural integrity is compromised.\n- **Section Loss and Rehabilitation (Section 6)**:\n  - Section Loss < 10%: Clean rebar, apply rust inhibitors, restore profile using polymer-modified cementitious mortar.\n  - Section Loss 10% - 25%: Install carbon fiber-reinforced polymer (CFRP) wraps or laminates to restore tensile capacity.\n  - Section Loss > 25%: Requires welding additional steel rebars or installing external post-tensioning tendons to restore structural load rating."
   },
   {
     "source": "irc_bridge_codes.md",
+    "collection_id": "General",
     "title": "IRC BRIDGE CODES - Section 3: Bridge Foundation Settlement",
     "content": "Section 3: Bridge Foundation Settlement\n\n- Tilting, differential settlement, or cracking at the base of piers indicates foundation wash-out, soil scour, or bearing failure.\n- Scour inspection must be performed post-monsoon.\n- Remediation: Concrete underpinning or micro-piling around the pier cap foundation."
   },
   {
     "source": "is456_concrete.md",
+    "collection_id": "General",
     "title": "IS456 CONCRETE - Overview",
     "content": "# IS 456:2000 - Plain and Reinforced Concrete Code of Practice"
   },
   {
     "source": "is456_concrete.md",
+    "collection_id": "General",
     "title": "IS456 CONCRETE - Section 1: Permissible Crack Widths",
     "content": "Section 1: Permissible Crack Widths\n\nAccording to Clause 35.3.2, structural cracks in concrete structures affect durability and appearance. The limits for surface crack widths under serviceability limit state are:\n- **Mild Exposure**: Surface crack width should not exceed **0.3 mm** in reinforced concrete members.\n- **Moderate Exposure**: Surface crack width should not exceed **0.2 mm** (e.g., structures exposed to rain or damp basements).\n- **Severe Exposure**: Surface crack width should not exceed **0.1 mm** (e.g., structures exposed to marine environments or aggressive chemicals).\n- **Critical Structural Danger**: Any crack exceeding **1.5 mm** indicates shear distress or structural overloading. Immediate pressure epoxy injection is required."
   },
   {
     "source": "is456_concrete.md",
+    "collection_id": "General",
     "title": "IS456 CONCRETE - Section 2: Concrete Spalling and Reinforcement Exposure",
     "content": "Section 2: Concrete Spalling and Reinforcement Exposure\n\nClause 26.4 states that concrete cover protects reinforcement from corrosion and fire.\n- **Nominal Cover Requirements**:\n  - Slab: 20 mm\n  - Beam: 25 mm\n  - Column: 40 mm\n  - Foundation: 50 mm\n- **Spalling Action Limits**:\n  - When concrete spalls and reinforcement is exposed, the carbonation front has reached the steel.\n  - Exposure of reinforcement bars leads to steel section loss. Active scaling rust reduces the tensile capacity.\n  - **Clause 11.3 Repair Standard**: Expose the corroded steel completely, clean using wire brushes or sandblasting, apply a zinc-rich anti-corrosion primer, and patch with polymer-modified mortar or micro-concrete."
   },
   {
     "source": "is456_concrete.md",
+    "collection_id": "General",
     "title": "IS456 CONCRETE - Section 3: Concrete Leaching and Carbonation",
     "content": "Section 3: Concrete Leaching and Carbonation\n\n- **Calcium Leaching**: White efflorescence or carbonate deposits on concrete surfaces (especially in tunnels or dams) indicate that water is leaching calcium hydroxide.\n- Leaching increases concrete porosity, dropping compressive strength and paving the way for carbonation.\n- Remediation: Drill injection ports and pump polyurethane chemical grout to stop water ingress."
   },
   {
     "source": "ndma_landslide_retaining.md",
+    "collection_id": "General",
     "title": "NDMA LANDSLIDE RETAINING - Overview",
     "content": "# NDMA Guidelines: Landslide Risk Mitigation & Retaining Structures"
   },
   {
     "source": "ndma_landslide_retaining.md",
+    "collection_id": "General",
     "title": "NDMA LANDSLIDE RETAINING - Section 1: Retaining Wall Structural Inspections",
     "content": "Section 1: Retaining Wall Structural Inspections\n\nRetaining walls (masonry, reinforced concrete, or gabion) are critical for protecting highway roads, bridges, and mountain structures.\n- **Defect Indicators**:\n  - **Tilted Wall**: Indicates earth pressure exceeding design capacity or soil liquefaction behind the wall.\n  - **Weep Hole Blockage**: Blocked weep holes trap water behind the wall, creating hydrostatic pressure. This is the #1 cause of retaining wall collapse.\n  - **Horizontal Cracking**: Indicates bending stress. Cracks > 2.0 mm on concrete retaining walls require immediate pressure relief.\n- **Remediation**:\n  - Clear clogged weep holes. Drill new weep holes at 1.5m grid intervals.\n  - Install ground anchors (soil nailing) to anchor the retaining wall back into stable rock."
   },
   {
     "source": "ndma_landslide_retaining.md",
+    "collection_id": "General",
     "title": "NDMA LANDSLIDE RETAINING - Section 2: Slope Stability and Soil Erosion",
     "content": "Section 2: Slope Stability and Soil Erosion\n\n- Drainage structures, catch drains, and concrete-lined chutes must be free of debris.\n- Soil slopes near highway bridge abutments require geotextile membrane covers or shotcrete application to prevent erosion under heavy monsoons.\n- If cracks form in the soil slope crest, it indicates tension cracking and imminent landslide failure. Fill cracks with compacted clay immediately to prevent water ingress."
   }

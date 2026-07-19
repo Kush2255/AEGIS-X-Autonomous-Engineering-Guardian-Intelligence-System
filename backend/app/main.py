@@ -18,7 +18,7 @@ from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 
 from .database import get_db, engine, Base
-from .models import Asset, Inspection, Defect, AIMemory, MaintenanceHistory, Simulation
+from .models import Asset, Inspection, Defect, AIMemory, MaintenanceHistory, Simulation, CollaborationComment, CollaborationTask
 from .schemas import (
     AssetBase, AssetDetailResponse, 
     InspectionDetailResponse, CopilotQuery, CopilotResponse, SimulationRequest
@@ -30,8 +30,8 @@ from .rag_indexer import RAGSystem
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="AEGIS X API",
-    description="Autonomous Engineering Guardian Intelligence System Backend API",
+    title="PRAHARI AI API",
+    description="PRAHARI AI – National Infrastructure Intelligence Platform Backend API",
     version="1.0.0"
 )
 
@@ -50,6 +50,9 @@ if not os.path.exists(UPLOAD_DIR):
     os.makedirs(UPLOAD_DIR)
 
 app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "static")), name="static")
+
+from .enterprise_api import router as enterprise_router
+app.include_router(enterprise_router)
 
 # Initialize orchestrator and RAG system
 coordinator = CoordinatorAgent()
@@ -130,7 +133,7 @@ async def upload_inspection(
     db: Session = Depends(get_db)
 ):
     """
-    Trigger the AEGIS X Multi-Agent Pipeline.
+    Trigger the PRAHARI AI Multi-Agent Pipeline.
     Uploads inspection images/reports, runs CoordinatorAgent, outputs steps, updates Digital Twin.
     """
     # 1. Handle file storage
@@ -204,7 +207,7 @@ def copilot_chat(query: CopilotQuery, db: Session = Depends(get_db)):
             model = genai.GenerativeModel('gemini-2.5-flash')
             
             prompt = (
-                "You are AEGIS X Structural Copilot, an expert explainable AI assistant. "
+                "You are PRAHARI AI Structural Copilot, an expert explainable AI assistant. "
                 f"You are helping an engineer assess '{asset.name}' ({asset.type}).\n\n"
                 f"DIGITAL TWIN MEMORY PROFILE:\n{memory_str}\n\n"
                 f"RETRIEVED ENGINEERING GUIDANCE CODES:\n{guidance_context}\n\n"
@@ -267,7 +270,7 @@ def copilot_chat(query: CopilotQuery, db: Session = Depends(get_db)):
     else:
         # Default summary answer
         answer = (
-            f"Hello. I am the AEGIS X AI Engineering Copilot. I have retrieved 3 engineering guidelines from our database matching your request.\n\n"
+            f"Hello. I am the PRAHARI AI AI Engineering Copilot. I have retrieved 3 engineering guidelines from our database matching your request.\n\n"
             f"**Asset Profile**: {asset.name} ({asset.type})\n"
             f"**Current Status**: {asset.risk_level} (Health: {asset.current_health_score}/100)\n\n"
             "Ask me about: \n"
