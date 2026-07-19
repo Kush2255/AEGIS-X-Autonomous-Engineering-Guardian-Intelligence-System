@@ -38,15 +38,55 @@ PRAHARI AI compiles these sources into a living **Predictive Digital Twin Platfo
 
 ## 🚀 2. Technology Stack
 
-| Layer | Technologies Used |
-|---|---|
-| **Frontend UI** | React 19, TypeScript, **Tailwind CSS v4** (Utility CSS in JS-free `@theme` declarations) |
-| **Data Viz & Maps** | **Leaflet Maps** (geolocating assets with pulsing status markers), **Recharts** (modelling deterioration and repair cost curves) |
-| **Orchestration Flow** | **React Flow** (visualizing the multi-agent graph layout on the landing page) |
-| **Backend API** | FastAPI (Python 3.12), Uvicorn, SQLite, SQLAlchemy ORM (Supabase PostgreSQL schema-aligned) |
-| **AI & RAG Core** | **Gemini 2.5 Flash / Vision** (multimodal analysis), **Gemini Embeddings** (RAG), and a custom pure-Python **TF-IDF + Cosine Similarity** fallback engine |
-| **Authentication** | Glassmorphic Sign In / Sign Up portal with Email+Password and Google Account login |
-| **Real Photos** | Unsplash Source API (free, no key required) for deterministic infrastructure photos per asset |
+### 🖥️ Frontend
+
+| Layer | Technology | Version | Purpose |
+|---|---|---|---|
+| **UI Framework** | React | v19.2 | Core component-based UI library |
+| **Language** | TypeScript | ~6.0 | Type-safe JavaScript superset |
+| **Build Tool** | Vite | v8.1 | Lightning-fast dev server & bundler |
+| **Styling** | Tailwind CSS v4 | v4.3 | Utility-first CSS with `@theme` declarations |
+| **Animations** | Framer Motion | v12.42 | Smooth page transitions & micro-animations |
+| **Maps** | Leaflet + react-leaflet | v1.9 / v5.0 | Interactive Telangana asset geolocation maps |
+| **Charts** | Recharts | v3.9 | Deterioration curves & repair cost graphs |
+| **Flow Diagrams** | React Flow | v11.11 | Multi-agent graph visualization |
+| **Icons** | Lucide React | v1.24 | Consistent SVG icon system |
+| **Linter** | OxLint | v1.71 | Rust-based fast JS/TS linting |
+
+### ⚙️ Backend
+
+| Layer | Technology | Version | Purpose |
+|---|---|---|---|
+| **API Framework** | FastAPI | 0.110.0 | High-performance async Python REST API |
+| **ASGI Server** | Uvicorn | 0.28.0 | Production-grade ASGI server |
+| **ORM** | SQLAlchemy | 2.0.28 | Database abstraction & schema management |
+| **Data Validation** | Pydantic | 2.6.4 | Request/response schema validation |
+| **Database (Dev)** | SQLite | — | Local embedded database (250 assets) |
+| **Database (Prod)** | Supabase (PostgreSQL) | — | Cloud-hosted relational database |
+| **PDF Parsing** | PyPDF | 4.1.0 | Contractor report & document extraction |
+| **File Uploads** | python-multipart | 0.0.9 | Multipart form-data handling |
+| **HTTP Client** | Requests | 2.31.0 | External API communication |
+
+### 🤖 AI Models & Frameworks
+
+| Layer | Technology | Version | Purpose |
+|---|---|---|---|
+| **Primary LLM** | Google Gemini 2.5 Flash | — | Natural language reasoning & report generation |
+| **Vision AI** | Gemini Vision (Multimodal) | — | Drone image & CCTV crack detection |
+| **Embeddings** | Gemini Embeddings | — | Semantic vector search for RAG |
+| **AI SDK** | google-generativeai | 0.4.1 | Official Python SDK for Gemini APIs |
+| **Agent Orchestration** | LangGraph | 0.0.26 | Multi-agent stateful graph execution |
+| **LLM Framework** | LangChain | 0.1.12 | LLM chain & tool integration layer |
+| **Fallback RAG Engine** | TF-IDF + Cosine Similarity | — | Pure-Python fallback when no API key present |
+
+### 🚀 Deployment & DevOps
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| **Frontend Hosting** | Vercel | Zero-config React/Vite deployment |
+| **Backend Hosting** | Render | FastAPI backend cloud hosting |
+| **Version Control** | Git / GitHub | Source code management |
+| **Process Manager** | Procfile (Uvicorn) | Production process management on Render |
 
 ---
 
