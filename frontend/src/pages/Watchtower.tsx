@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE } from '../config/api';
 import { TrendingUp, Printer, Sparkles } from 'lucide-react';
 import { ThreeDTilt } from '../components/ThreeDTilt';
 import { ThreeDConstellation } from '../components/ThreeDConstellation';
@@ -51,7 +52,7 @@ export const Watchtower: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchBudget = () => {
-    fetch('http://localhost:8000/api/enterprise/budget-optimize', {
+    fetch(`${API_BASE}/api/enterprise/budget-optimize`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ budget: budgetLimit })
@@ -64,10 +65,10 @@ export const Watchtower: React.FC = () => {
   useEffect(() => {
     setLoading(true);
     Promise.all([
-      fetch('http://localhost:8000/api/enterprise/watchtower').then(r => r.json()),
-      fetch('http://localhost:8000/api/enterprise/seasonal-risk').then(r => r.json()),
-      fetch('http://localhost:8000/api/enterprise/portfolio-compare').then(r => r.json()),
-      fetch('http://localhost:8000/api/enterprise/executive-report').then(r => r.json())
+      fetch(`${API_BASE}/api/enterprise/watchtower`).then(r => r.json()),
+      fetch(`${API_BASE}/api/enterprise/seasonal-risk`).then(r => r.json()),
+      fetch(`${API_BASE}/api/enterprise/portfolio-compare`).then(r => r.json()),
+      fetch(`${API_BASE}/api/enterprise/executive-report`).then(r => r.json())
     ]).then(([w, s, p, e]) => {
       setWatchtowerData(w);
       setSeasonalData(s);

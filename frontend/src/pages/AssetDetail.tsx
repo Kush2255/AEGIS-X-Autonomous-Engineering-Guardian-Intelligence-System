@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE } from '../config/api';
 import { 
   ArrowLeft, Calendar, User, ShieldAlert, Sparkles, 
   Wrench, Activity, ChevronRight, Download, Clock 
@@ -47,7 +48,7 @@ export const AssetDetail: React.FC<AssetDetailProps> = ({ assetId, onBack, onNav
   const [selectedStrategy, setSelectedStrategy] = useState<string>('Immediate Repair (CFRP)');
 
   const fetchCollab = () => {
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/collaboration`)
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/collaboration`)
       .then(res => res.json())
       .then(setCollab)
       .catch(err => console.error(err));
@@ -56,7 +57,7 @@ export const AssetDetail: React.FC<AssetDetailProps> = ({ assetId, onBack, onNav
   useEffect(() => {
     if (!assetId) return;
 
-    fetch(`http://localhost:8000/api/assets/${assetId}`)
+    fetch(`${API_BASE}/api/assets/${assetId}`)
       .then(res => res.json())
       .then(resData => {
         // Sort inspections oldest to newest for the timeline replay
@@ -78,31 +79,31 @@ export const AssetDetail: React.FC<AssetDetailProps> = ({ assetId, onBack, onNav
       });
 
     // Fetch all extra endpoints
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/root-cause`).then(res => res.json()).then(setRootCause).catch(err => console.error(err));
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/forecast`).then(res => res.json()).then(setForecast).catch(err => console.error(err));
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/repair-comparison`).then(res => res.json()).then(setRepairComparison).catch(err => console.error(err));
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/story`).then(res => res.json()).then(setStory).catch(err => console.error(err));
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/graph`).then(res => res.json()).then(setGraph).catch(err => console.error(err));
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/risk-timeline`).then(res => res.json()).then(setRiskTimeline).catch(err => console.error(err));
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/confidence-breakdown`).then(res => res.json()).then(setConfidenceBreakdown).catch(err => console.error(err));
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/data-completeness`).then(res => res.json()).then(setDataCompleteness).catch(err => console.error(err));
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/dependency-map`).then(res => res.json()).then(setDependencyMap).catch(err => console.error(err));
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/incident-impact`).then(res => res.json()).then(setIncidentImpact).catch(err => console.error(err));
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/similar-cases`).then(res => res.json()).then(setSimilarCases).catch(err => console.error(err));
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/recommendation-simulator`).then(res => res.json()).then(setStrategySimulator).catch(err => console.error(err));
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/feedback-stats`).then(res => res.json()).then(setFeedbackStats).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/root-cause`).then(res => res.json()).then(setRootCause).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/forecast`).then(res => res.json()).then(setForecast).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/repair-comparison`).then(res => res.json()).then(setRepairComparison).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/story`).then(res => res.json()).then(setStory).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/graph`).then(res => res.json()).then(setGraph).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/risk-timeline`).then(res => res.json()).then(setRiskTimeline).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/confidence-breakdown`).then(res => res.json()).then(setConfidenceBreakdown).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/data-completeness`).then(res => res.json()).then(setDataCompleteness).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/dependency-map`).then(res => res.json()).then(setDependencyMap).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/incident-impact`).then(res => res.json()).then(setIncidentImpact).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/similar-cases`).then(res => res.json()).then(setSimilarCases).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/recommendation-simulator`).then(res => res.json()).then(setStrategySimulator).catch(err => console.error(err));
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/feedback-stats`).then(res => res.json()).then(setFeedbackStats).catch(err => console.error(err));
     fetchCollab();
   }, [assetId]);
 
   const submitFeedback = (action: string) => {
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/feedback`, {
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/feedback`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action: action, notes: "Evaluated by engineer" })
     })
       .then(() => {
         setFeedbackSubmitted(true);
-        fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/feedback-stats`)
+        fetch(`${API_BASE}/api/enterprise/assets/${assetId}/feedback-stats`)
           .then(res => res.json())
           .then(setFeedbackStats);
       });
@@ -112,7 +113,7 @@ export const AssetDetail: React.FC<AssetDetailProps> = ({ assetId, onBack, onNav
     e.preventDefault();
     if (!newComment.trim()) return;
 
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/collaboration/comment`, {
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/collaboration/comment`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ author: collabAuthor, content: newComment })
@@ -127,7 +128,7 @@ export const AssetDetail: React.FC<AssetDetailProps> = ({ assetId, onBack, onNav
     e.preventDefault();
     if (!newTask.trim()) return;
 
-    fetch(`http://localhost:8000/api/enterprise/assets/${assetId}/collaboration/task`, {
+    fetch(`${API_BASE}/api/enterprise/assets/${assetId}/collaboration/task`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title: newTask, priority: 'Medium' })

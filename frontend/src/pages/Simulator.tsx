@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE } from '../config/api';
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from 'recharts';
 import { ArrowLeft, DollarSign, BookOpen, Clock, Activity } from 'lucide-react';
 import type { Asset, Simulation } from '../types';
@@ -18,7 +19,7 @@ export const Simulator: React.FC<SimulatorProps> = ({ onBack, selectedAssetId })
 
   // Fetch assets list
   useEffect(() => {
-    fetch('http://localhost:8000/api/assets')
+    fetch(`${API_BASE}/api/assets`)
       .then(res => res.json())
       .then(data => {
         setAssets(data);
@@ -42,7 +43,7 @@ export const Simulator: React.FC<SimulatorProps> = ({ onBack, selectedAssetId })
     if (!selectedAsset) return;
 
     // We fetch the latest completed inspection's simulations
-    fetch(`http://localhost:8000/api/assets/${selectedAsset.id}`)
+    fetch(`${API_BASE}/api/assets/${selectedAsset.id}`)
       .then(res => res.json())
       .then(data => {
         if (data.inspections && data.inspections.length > 0) {
@@ -51,7 +52,7 @@ export const Simulator: React.FC<SimulatorProps> = ({ onBack, selectedAssetId })
           )[0];
           
           // Get simulations for this inspection
-          fetch(`http://localhost:8000/api/inspections/${latestInspection.id}`)
+          fetch(`${API_BASE}/api/inspections/${latestInspection.id}`)
             .then(res => res.json())
             .then(insData => {
               setSimulations(insData.simulations || []);

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE } from '../config/api';
 import { Search, BookOpen, Bookmark, BookmarkCheck, Sparkles, CheckCircle, Filter, Globe, FileText, Building2, ShieldCheck } from 'lucide-react';
 import { ThreeDTilt } from '../components/ThreeDTilt';
 import { ThreeDConstellation } from '../components/ThreeDConstellation';
@@ -57,7 +58,7 @@ export const KnowledgeCenter: React.FC = () => {
     if (docTypeFilter) params.set('doc_type', docTypeFilter);
     if (infraTypeFilter) params.set('infra_type', infraTypeFilter);
     if (publisherFilter) params.set('publisher', publisherFilter);
-    return `http://localhost:8000/api/enterprise/standards-explorer?${params.toString()}`;
+    return `${API_BASE}/api/enterprise/standards-explorer?${params.toString()}`;
   };
 
   const fetchStandards = (q: string = query) => {

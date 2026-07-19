@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE } from '../config/api';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell } from 'recharts';
@@ -38,7 +39,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onSelectAsset, onNavigateT
   const [copilotAsset, setCopilotAsset] = useState<{ id: string; name: string } | null>(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/assets')
+    fetch(`${API_BASE}/api/assets`)
       .then(res => res.json())
       .then(data => {
         setAssets(data);

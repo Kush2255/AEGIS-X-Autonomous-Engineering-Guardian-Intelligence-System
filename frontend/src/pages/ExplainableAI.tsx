@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE } from '../config/api';
 import { Sparkles, Terminal, BookOpen, AlertTriangle, Cpu, CheckCircle } from 'lucide-react';
 import { ThreeDTilt } from '../components/ThreeDTilt';
 import { ThreeDConstellation } from '../components/ThreeDConstellation';
@@ -18,7 +19,7 @@ export const ExplainableAI: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/assets')
+    fetch(`${API_BASE}/api/assets`)
       .then(res => res.json())
       .then(data => {
         setAssets(data);

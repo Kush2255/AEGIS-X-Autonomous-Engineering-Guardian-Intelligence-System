@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { API_BASE } from '../config/api';
 import { Send, Sparkles, X, MessageSquare, BookOpen } from 'lucide-react';
 
 interface CopilotProps {
@@ -50,7 +51,7 @@ export const Copilot: React.FC<CopilotProps> = ({ assetId, assetName, isOpen, on
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8000/api/copilot/chat', {
+      const response = await fetch(`${API_BASE}/api/copilot/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

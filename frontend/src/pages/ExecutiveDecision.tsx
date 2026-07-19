@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE } from '../config/api';
 import { Landmark, ShieldCheck, AlertCircle, ShieldAlert } from 'lucide-react';
 import { ThreeDTilt } from '../components/ThreeDTilt';
 import { ThreeDConstellation } from '../components/ThreeDConstellation';
@@ -17,7 +18,7 @@ export const ExecutiveDecision: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/enterprise/command-center')
+    fetch(`${API_BASE}/api/enterprise/command-center`)
       .then(res => res.json())
       .then(data => {
         setStats({

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE } from '../config/api';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import { ResponsiveContainer, XAxis, YAxis, Tooltip, LineChart, Line, CartesianGrid, Legend } from 'recharts';
@@ -48,7 +49,7 @@ export const NationalCommand: React.FC = () => {
   const [searching, setSearching] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/enterprise/command-center')
+    fetch(`${API_BASE}/api/enterprise/command-center`)
       .then(res => res.json())
       .then(resData => {
         setData(resData);
@@ -64,7 +65,7 @@ export const NationalCommand: React.FC = () => {
     e.preventDefault();
     if (!searchQuery.trim()) return;
     setSearching(true);
-    fetch(`http://localhost:8000/api/enterprise/search?q=${encodeURIComponent(searchQuery)}`)
+    fetch(`${API_BASE}/api/enterprise/search?q=${encodeURIComponent(searchQuery)}`)
       .then(res => res.json())
       .then(resData => {
         setSearchResults(resData.results || []);

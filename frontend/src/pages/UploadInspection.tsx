@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE } from '../config/api';
 import { 
   ArrowLeft, Upload, FileText, CloudRain, Truck, 
   Terminal, Cpu, CheckCircle2, Play 
@@ -48,7 +49,7 @@ export const UploadInspection: React.FC<UploadInspectionProps> = ({ onBack, onNa
   ];
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/assets')
+    fetch(`${API_BASE}/api/assets`)
       .then(res => res.json())
       .then(data => {
         setAssets(data);
@@ -82,7 +83,7 @@ export const UploadInspection: React.FC<UploadInspectionProps> = ({ onBack, onNa
 
     try {
       // 1. Submit upload and fetch final coordinates payload
-      const response = await fetch('http://localhost:8000/api/inspections/upload', {
+      const response = await fetch(`${API_BASE}/api/inspections/upload`, {
         method: 'POST',
         body: formData
       });
