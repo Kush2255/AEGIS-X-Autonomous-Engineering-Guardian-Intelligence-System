@@ -1,13 +1,48 @@
+# render.yaml — PRAHARI AI Full-Stack Deployment Blueprint
+# Deploys both the FastAPI backend and React frontend on Render.
+# Import this at: https://dashboard.render.com/blueprints
+
 services:
+  # ─────────────────────────────────────────────
+  # 1. Backend — FastAPI Python Web Service
+  # ─────────────────────────────────────────────
   - type: web
-    name: aegis-x-backend
-    env: python
-    buildCommand: "pip install -r backend/requirements.txt && python -m backend.app.rag_indexer"
-    startCommand: "python -m uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT"
+    name: prahari-ai-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: >
+      pip install -r requirements.txt &&
+      python -m app.rag_indexer &&
+      python -m app.seed
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    healthCheckPath: /health
     envVars:
-      - key: PORT
-        value: 8000
-      - key: DATABASE_URL
-        sync: false
+      - key: PYTHON_VERSION
+        value: "3.11.0"
       - key: GEMINI_API_KEY
-        sync: false
+        sync: false        # You will enter this manually in Render dashboard
+      - key: DATABASE_URL
+        value: ""          # Leave blank to use local SQLite
+
+  # ─────────────────────────────────────────────
+  # 2. Frontend — React / Vite Static Site
+  # ─────────────────────────────────────────────
+  - type: web
+    name: prahari-ai-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    pullRequestPreviewsEnabled: true
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: prahari-ai-backend
+          property: host
+          format: https://{host}

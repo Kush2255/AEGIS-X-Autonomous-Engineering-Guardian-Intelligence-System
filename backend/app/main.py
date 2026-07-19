@@ -58,6 +58,11 @@ app.include_router(enterprise_router)
 coordinator = CoordinatorAgent()
 rag_system = RAGSystem()
 
+@app.get("/health")
+def health_check():
+    """Render health check endpoint."""
+    return {"status": "ok", "platform": "PRAHARI AI", "version": "1.0.0"}
+
 @app.get("/api/assets", response_model=List[AssetBase])
 def get_assets(db: Session = Depends(get_db)):
     """Fetch all infrastructure assets."""
